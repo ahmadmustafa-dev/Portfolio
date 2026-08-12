@@ -75,7 +75,7 @@ export default function AllProjectsPage() {
                       {project.title}
                     </h3>
                     <p className="mt-0 text-xs leading-[20px] text-fog-500 min-[480px]:text-[14px]">
-                      {project.description}
+                      {project.summary ?? project.description}
                     </p>
 
                     {/* Case Study button */}

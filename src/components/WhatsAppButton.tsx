@@ -20,7 +20,7 @@ export default function WhatsAppButton() {
       {/* Pulsing halo */}
       <span
         aria-hidden="true"
-        className="animate-wa-in absolute inset-0 rounded-full bg-neon-400/50"
+        className="animate-wa-in absolute inset-0 rounded-full bg-neon-400/40"
       />
       <span
         aria-hidden="true"

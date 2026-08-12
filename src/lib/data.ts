@@ -107,6 +107,7 @@ export type Project = {
   year: string;
   title: string;
   description: string;
+  summary?: string;
   stack: string[];
   accent: string;
   n8n?: boolean;
@@ -119,45 +120,55 @@ export const projects: Project[] = [
   {
     id: "043",
     year: "2025–26",
-    title: "Ko-Ramen — Restaurant Web App",
+    title: "Ko Ramen — Pakistan's First Korean Convenience Store & Noodle Lounge",
+    summary:
+      "A dynamic, modern brand and web platform for Pakistan's premier Korean convenience store chain, featuring dynamic noodle cataloging, self-cook lounge previews, and delivery integrations.",
     description:
-      "Full-stack restaurant platform — digital menu, table reservations, online ordering with Stripe checkout, and a live admin dashboard for menu, orders and bookings.",
-    stack: ["Next.js", "Laravel", "MySQL", "Stripe"],
-    accent: "Neon, Web Development",
+      "Designed and built a sleek, aesthetic web experience for Ko Ramen, Pakistan's first authentic Korean convenience store operating in DHA Phase 6, Lahore and Bahria Town Phase 4, Islamabad. The platform brings the iconic Korean store culture to life digitally, showcasing their signature 50+ variety noodle wall, interactive self-cook lounge experience, curated K-food menu items, and direct online ordering pathways via WhatsApp and Foodpanda.",
+    stack: [
+      "React.js",
+      "Tailwind CSS",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "Vercel",
+      "Git",
+      "Vite",
+      "WhatsApp API Integration",
+    ],
+    accent: "Neon, Food & Retail",
     image: "/images/Projects_Imgs/Ko-Ramen/1.webp",
     link: "/project/043",
     details: {
       category: "Web Development",
       overview: {
         problemSolved:
-          "The restaurant ran on paper menus and phone orders — high missed-call rates, lost bookings and no visibility into daily sales. This platform moves the entire operation online: customers browse, book and pay themselves, while staff get one dashboard for everything.",
+          "Introduced a new retail and culinary concept to the local market by translating a physical interactive self-cook store setup into an engaging online platform. The site solves menu discovery issues by organizing dozens of imported noodle varieties (Buldak, Samyang, Shin) with live pricing and flavors, while streamlining delivery and location discovery for multi-city branches.",
         targetAudience:
-          "Restaurant owners and their customers — diners who want menus, reservations and ordering without phone calls, and staff who need a simple, real-time view of orders and bookings.",
+          "K-pop/K-drama fans, Asian food lovers, late-night snackers, and adventurous foodies in Lahore and Islamabad looking for authentic imported Korean snacks and an interactive ramen-cooking dining experience.",
         whyBuilt:
-          "It's a complete full-stack product under one roof — public Next.js frontend, Laravel API, MySQL schema design, Stripe payments and an authenticated admin panel. It demonstrates the exact end-to-end skills the portfolio promises.",
+          "To build a high-impact digital presence that reflects the modern, minimalist retail aesthetic of Ko Ramen and drives foot traffic to physical stores while scaling online delivery orders.",
       },
       role: [
         "Full-Stack Web Developer",
         "UI/UX Designer",
-        "API & Database Design",
-        "Payment Integration",
-        "Deployment & Performance",
+        "Frontend Developer",
+        "Performance Optimization Engineer",
       ],
       features: [
-        "Digital menu with categories, dietary tags and dish photos",
-        "Table reservations with date, party size and time slots",
-        "Online ordering with cart, modifiers and live totals",
-        "Stripe checkout — cards, one-click and saved payments",
-        "Admin dashboard for menu, orders, reservations and customers",
-        "Order status tracking — received, preparing, ready, served",
-        "Booking & order confirmation notifications",
-        "Fully responsive — mobile-first for on-the-go diners",
+        "Signature Noodle Wall Catalog",
+        "Interactive Menu & Live Pricing Display",
+        "Self-Cook Noodle Lounge Preview",
+        "Multi-City Location Details (Lahore & Islamabad)",
+        "One-Click WhatsApp Ordering",
+        "Foodpanda Delivery Integration",
+        "Interactive Cart Simulator",
+        "Mobile-First Responsive Layout",
+        "SEO Optimized Metadata",
       ],
       screenshots: [
         "/images/Projects_Imgs/Ko-Ramen/1.webp",
         "/images/Projects_Imgs/Ko-Ramen/2.webp",
         "/images/Projects_Imgs/Ko-Ramen/3.webp",
-        "/images/Projects_Imgs/Ko-Ramen/4.webp",
       ],
       demoUrl: "https://www.ko-ramen.com/",
     },
@@ -220,42 +231,58 @@ export const projects: Project[] = [
   {
     id: "044",
     year: "2025",
-    title: "Daebak Korean BBQ — Restaurant Web App",
-    description: "Full‑stack web app for a Korean BBQ restaurant — menu, reservation, online ordering and loyalty program.",
-    stack: ["Next.js", "Laravel", "MySQL", "Stripe", "Tailwind CSS"],
-    accent: "Neon, Food Service",
+    title: "Daebak Korean BBQ — Modern Dining & Digital Brand Experience",
+    summary:
+      "A modern, high-performance web platform for Lahore's premier Korean BBQ restaurant, featuring interactive menus, brand storytelling, and seamless WhatsApp/Foodpanda integrations.",
+    description:
+      "Designed and built a sleek, luxury digital experience for Daebak Korean BBQ, located in Defence Raya, DHA Phase 6, Lahore. The platform captures the energetic, high-tech Seoul dining ambiance while offering prospective guests an effortless way to explore the menu, check reviews, find location details, and place direct orders or reservations. The site was engineered with a mobile-first approach to ensure fast load times, smooth scrolling, and high conversion rates.",
+    stack: [
+      "React.js",
+      "Tailwind CSS",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "Vercel",
+      "Git",
+      "Hostinger",
+      "Webpack/Vite",
+      "WhatsApp API Integration",
+    ],
+    accent: "Neon, Luxury Dining",
     image: "/images/Projects_Imgs/Daebak-korean-bbq/1.webp",
     link: "/project/044",
     details: {
       category: "Web Development",
       overview: {
-        problemSolved: "The restaurant needed a modern online presence to showcase its menu, accept reservations and orders, and manage loyalty points.",
-        targetAudience: "Diners who want to view the menu, book a table, and order takeout online; staff who need a unified dashboard.",
-        whyBuilt: "Demonstrates end‑to‑end capabilities: Next.js UI, Laravel API, MySQL data, Stripe payments, and a custom admin panel."
+        problemSolved:
+          "Traditional restaurant pages often struggle with slow image loading, complex PDF menu downloads, and disjointed contact flows. This project solves those friction points by delivering a lightning-fast, visually rich website with dynamic menu categories, integrated social proof, and one-click actions for WhatsApp inquiries and Foodpanda delivery.",
+        targetAudience:
+          "Food enthusiasts, luxury diners, and the DHA Phase 6 / Defence Raya crowd in Lahore seeking authentic Korean BBQ, interactive DIY table-side grilling, and premium dining experiences.",
+        whyBuilt:
+          "To elevate Daebak Korean BBQ’s online presence to match its high-end physical dining experience, bridging the gap between social media discovery and real-world table bookings and orders.",
       },
       role: [
-        "Full‑Stack Web Developer",
+        "Full-Stack Web Developer",
         "UI/UX Designer",
-        "API & Database Design",
-        "Payment Integration",
-        "Admin Dashboard"
+        "Frontend Developer",
+        "Performance Optimization Engineer",
       ],
       features: [
-        "Dynamic menu with categories and dietary tags",
-        "Table reservation system with time‑slot selection",
-        "Online ordering with cart and modifiers",
-        "Stripe checkout for secure payments",
-        "Loyalty points tracking",
-        "Responsive design — mobile first"
+        "Interactive Menu Categories",
+        "One-Click WhatsApp Ordering & Reservations",
+        "Foodpanda Delivery Integration",
+        "Ambiance & Dining Visual Gallery",
+        "Customer Reviews & Ratings Showcase",
+        "Mobile-First Responsive Layout",
+        "SEO Optimized Metadata",
+        "Location & Map Portal",
       ],
       screenshots: [
         "/images/Projects_Imgs/Daebak-korean-bbq/1.webp",
         "/images/Projects_Imgs/Daebak-korean-bbq/2.webp",
         "/images/Projects_Imgs/Daebak-korean-bbq/3.webp",
-        "/images/Projects_Imgs/Daebak-korean-bbq/4.webp"
       ],
-      demoUrl: "https://www.daebak-korean-bbq.com/"
-    }
+      demoUrl: "https://www.daebak-korean-bbq.com/",
+    },
   }
 ];
 

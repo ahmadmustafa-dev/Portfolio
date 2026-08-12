@@ -2,7 +2,7 @@ import { projects } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import SpotlightCard from "./SpotlightCard";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function Projects() {
   return (
@@ -75,7 +75,7 @@ export default function Projects() {
                       {project.title}
                     </h3>
                     <p className="mt-0 text-xs leading-[20px] text-fog-500 min-[480px]:text-[14px]">
-                      {project.description}
+                      {project.summary ?? project.description}
                     </p>
 
                     {/* Case Study button */}
@@ -83,15 +83,15 @@ export default function Projects() {
                       {project.link ? (
                         <a
                           href={project.link}
-                          className="mt-5 inline-flex items-center gap-2 rounded border border-white/10 bg-white/[0.03] px-6 py-2.5 text-sm font-semibold text-fog-600 hover:bg-white/[0.06] transition-colors"
+                          className="group mt-5 inline-flex items-center gap-2 rounded border border-neon-400/30 px-6 py-2.5 text-sm font-semibold text-white transition-colors duration-300 hover:border-neon-500"
                         >
                           Case study
-                          <ArrowUpRight size={16} className="ml-1 min-[480px]:ml-3" />
+                          <ArrowRight size={16} className="ml-1 min-[480px]:ml-3 transition-transform duration-300 group-hover:translate-x-1" />
                         </a>
                       ) : (
-                        <span className="mt-5 flex max-sm:w-full items-center justify-center rounded border border-white/10 bg-white/[0.03] px-6 py-2.5 text-sm font-semibold text-fog-600 min-[480px]:py-[23px] min-[480px]:text-base">
+                        <span className="mt-5 flex max-sm:w-full items-center justify-center rounded border border-neon-400/30  px-6 py-2.5 text-sm font-semibold text-white min-[480px]:py-[23px] min-[480px]:text-base transition-colors duration-300 hover:border-neon-500s">
                           Case study soon
-                          <ArrowUpRight size={16} className="ml-1 min-[480px]:ml-3" />
+                          <ArrowRight size={16} className="ml-1 min-[480px]:ml-3 transition-transform duration-300 hover:translate-x-1" />
                         </span>
                       )}
                     </div>
