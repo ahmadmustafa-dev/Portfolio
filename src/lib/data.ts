@@ -217,6 +217,46 @@ export const projects: Project[] = [
     stack: ["Java", "Android", "Firebase"],
     accent: "Neon, Android",
   },
+  {
+    id: "044",
+    year: "2025",
+    title: "Daebak Korean BBQ — Restaurant Web App",
+    description: "Full‑stack web app for a Korean BBQ restaurant — menu, reservation, online ordering and loyalty program.",
+    stack: ["Next.js", "Laravel", "MySQL", "Stripe", "Tailwind CSS"],
+    accent: "Neon, Food Service",
+    image: "/images/Projects_Imgs/Daebak-Korean-BBQ/1.webp",
+    link: "/project/044",
+    details: {
+      category: "Web Development",
+      overview: {
+        problemSolved: "The restaurant needed a modern online presence to showcase its menu, accept reservations and orders, and manage loyalty points.",
+        targetAudience: "Diners who want to view the menu, book a table, and order takeout online; staff who need a unified dashboard.",
+        whyBuilt: "Demonstrates end‑to‑end capabilities: Next.js UI, Laravel API, MySQL data, Stripe payments, and a custom admin panel."
+      },
+      role: [
+        "Full‑Stack Web Developer",
+        "UI/UX Designer",
+        "API & Database Design",
+        "Payment Integration",
+        "Admin Dashboard"
+      ],
+      features: [
+        "Dynamic menu with categories and dietary tags",
+        "Table reservation system with time‑slot selection",
+        "Online ordering with cart and modifiers",
+        "Stripe checkout for secure payments",
+        "Loyalty points tracking",
+        "Responsive design — mobile first"
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/Daebak-Korean-BBQ/1.webp",
+        "/images/Projects_Imgs/Daebak-Korean-BBQ/2.webp",
+        "/images/Projects_Imgs/Daebak-Korean-BBQ/3.webp",
+        "/images/Projects_Imgs/Daebak-Korean-BBQ/4.webp"
+      ],
+      demoUrl: "https://www.daebak-korean-bbq.com/"
+    }
+  }
 ];
 
 export type Automation = {
