@@ -1,10 +1,10 @@
 import { projects } from "@/lib/data";
-import SectionHeading from "./SectionHeading";
-import Reveal from "./Reveal";
-import SpotlightCard from "./SpotlightCard";
+import SectionHeading from "@/components/SectionHeading";
+import Reveal from "@/components/Reveal";
+import SpotlightCard from "@/components/SpotlightCard";
 import { ArrowUpRight } from "lucide-react";
 
-export default function Projects() {
+export default function AllProjectsPage() {
   return (
     <section
       id="work"
@@ -37,7 +37,7 @@ export default function Projects() {
 
         {/* Project card grid */}
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {projects.slice(0, 9).map((project, i) => (
+          {projects.map((project, i) => (
             <Reveal key={project.id} delay={(i % 3) * 80}>
               <SpotlightCard className="h-full rounded-lg">
                 <article className="card-line group relative h-full overflow-hidden rounded-[calc(0.5rem-1px)] transition-colors duration-300">
@@ -100,17 +100,7 @@ export default function Projects() {
               </SpotlightCard>
             </Reveal>
           ))}
-          </div>
-          {/* Show all projects button */}
-          <div className="mt-8 flex justify-center">
-            <a
-              href="/projects"
-              className="inline-flex items-center gap-2 rounded border border-white/10 bg-white/[0.03] px-6 py-2.5 text-sm font-semibold text-fog-600 hover:bg-white/[0.06]"
-            >
-              Show all projects
-              <ArrowUpRight size={16} />
-            </a>
-          </div>
+        </div>
 
         <Reveal delay={100}>
           <p className="mt-10 font-mono text-xs text-fog-500">
