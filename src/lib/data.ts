@@ -125,6 +125,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "Laravel", "MySQL", "Stripe"],
     accent: "Neon, Web Development",
     image: "/images/Projects_Imgs/Ko-Ramen/1.webp",
+    link: "/project/043",
     details: {
       category: "Web Development",
       overview: {
