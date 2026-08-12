@@ -224,7 +224,7 @@ export const projects: Project[] = [
     description: "Full‑stack web app for a Korean BBQ restaurant — menu, reservation, online ordering and loyalty program.",
     stack: ["Next.js", "Laravel", "MySQL", "Stripe", "Tailwind CSS"],
     accent: "Neon, Food Service",
-    image: "/images/Projects_Imgs/Daebak-Korean-BBQ/1.webp",
+    image: "/images/Projects_Imgs/Daebak-korean-bbq/Screenshot 2026-08-12 171227.png",
     link: "/project/044",
     details: {
       category: "Web Development",
@@ -249,7 +249,7 @@ export const projects: Project[] = [
         "Responsive design — mobile first"
       ],
       screenshots: [
-        "/images/Projects_Imgs/Daebak-Korean-BBQ/1.webp",
+        "/images/Projects_Imgs/Daebak-korean-bbq/Screenshot 2026-08-12 171227.png",
         "/images/Projects_Imgs/Daebak-Korean-BBQ/2.webp",
         "/images/Projects_Imgs/Daebak-Korean-BBQ/3.webp",
         "/images/Projects_Imgs/Daebak-Korean-BBQ/4.webp"
