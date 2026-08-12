@@ -5,7 +5,7 @@ import { experience } from "@/lib/data";
 export default function Experience() {
   return (
     <section id="experience" className="section-sep scroll-mt-24 py-24 sm:py-32">
-      <div className="mx-auto w-full max-w-6xl px-3 sm:px-5">
+      <div className="mx-auto w-full max-w-6xl px-2 sm:px-4">
         <SectionHeading
           index="03"
           label="Journey"

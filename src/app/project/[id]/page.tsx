@@ -56,7 +56,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
       <main className="flex-1">
         {/* ===== Header — title, stack, live demo + hero image ===== */}
         <section className="section-sep bg-ink-900/40 pb-16 pt-28 sm:pb-20 sm:pt-36">
-          <div className="mx-auto w-full max-w-6xl px-3 sm:px-5">
+          <div className="mx-auto w-full max-w-6xl px-2 sm:px-4">
             {/* Back button — exact reference style */}
             <LinkBack />
 
@@ -124,7 +124,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 
         {/* ===== Project Overview — plain columns, exact reference ===== */}
         <section className="section-sep border-t border-white/5 py-16 sm:py-20">
-          <div className="mx-auto w-full max-w-6xl px-3 sm:px-5">
+          <div className="mx-auto w-full max-w-6xl px-2 sm:px-4">
             <div className="mx-auto max-w-4xl">
               <SubHeading index="01 · Overview">Project Overview</SubHeading>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
@@ -145,7 +145,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 
         {/* ===== My Role & Responsibilities — plain accent-bulleted list ===== */}
         <section className="section-sep border-t border-white/5 bg-ink-900/60 py-16 sm:py-20">
-          <div className="mx-auto w-full max-w-6xl px-3 sm:px-5">
+          <div className="mx-auto w-full max-w-6xl px-2 sm:px-4">
             <div className="mx-auto max-w-4xl">
               <SubHeading index="02 · Role">My Role &amp; Responsibilities</SubHeading>
               <ul className="space-y-3">
@@ -162,7 +162,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 
         {/* ===== Features — exact reference white cards ===== */}
         <section className="section-sep border-t border-white/5 py-16 sm:py-20">
-          <div className="mx-auto w-full max-w-6xl px-3 sm:px-5">
+          <div className="mx-auto w-full max-w-6xl px-2 sm:px-4">
             <div className="mx-auto max-w-4xl">
               <SubHeading index="03 · Features">Features</SubHeading>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -179,7 +179,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 
         {/* ===== Screenshots — exact reference tiles ===== */}
         <section className="section-sep border-t border-white/5 bg-ink-900/60 py-16 sm:py-20">
-          <div className="mx-auto w-full max-w-6xl px-3 sm:px-5">
+          <div className="mx-auto w-full max-w-6xl px-2 sm:px-4">
             <SubHeading index="04 · Screenshots">Screenshots</SubHeading>
             <ProjectGallery images={details.screenshots} projectTitle={project.title} />
           </div>

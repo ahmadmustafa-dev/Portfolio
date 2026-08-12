@@ -20,7 +20,7 @@ function resolveConnectors(accents: string[]) {
 export default function Automation() {
   return (
     <section id="automation" className="section-sep scroll-mt-24 py-24 sm:py-32">
-      <div className="mx-auto w-full max-w-6xl px-3 sm:px-5">
+      <div className="mx-auto w-full max-w-6xl px-2 sm:px-4">
         <SectionHeading
           index="05"
           label="Automation"
