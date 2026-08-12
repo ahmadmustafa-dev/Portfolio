@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, IBM_Plex_Sans, JetBrains_Mono, Fraunces } from "next/font/google";
 import ScrollProgress from "@/components/ScrollProgress";
+import ScrollToTop from "@/components/ScrollToTop";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CustomCursor from "@/components/CustomCursor";
 import Intro from "@/components/Intro";
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <CustomCursor />
         <Intro />
         <ScrollProgress />
+        <ScrollToTop />
         {children}
         <WhatsAppButton />
       </body>

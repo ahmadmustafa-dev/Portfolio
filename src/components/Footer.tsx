@@ -1,5 +1,5 @@
 import { ArrowUpRight, Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon, WhatsAppIcon, XIcon } from "./icons";
+import { GithubIcon, LinkedinIcon, WhatsAppIcon } from "./icons";
 import EmailCompose from "./EmailCompose";
 import LocationClock from "./LocationClock";
 import Reveal from "./Reveal";
@@ -127,7 +127,6 @@ export default function Footer() {
             {[
               { icon: GithubIcon, href: profile.socials.github, label: "GitHub" },
               { icon: LinkedinIcon, href: profile.socials.linkedin, label: "LinkedIn" },
-              { icon: XIcon, href: profile.socials.twitter, label: "X" },
               { icon: WhatsAppIcon, href: WHATSAPP_LINK, label: "WhatsApp" },
             ].map((social) => (
               <a

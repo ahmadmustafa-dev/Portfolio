@@ -17,7 +17,7 @@ export const profile = {
   socials: {
     github: "https://github.com/ahmadmustafa-dev/",
     linkedin: "https://www.linkedin.com/in/ahmadmustafa-dev/",
-    twitter: "https://x.com/yourusername", // TODO: swap with your real X handle
+    // twitter: "https://x.com/yourusername", // add back when the handle is ready
   },
 };
 

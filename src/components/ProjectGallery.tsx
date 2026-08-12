@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Maximize2, X } from "lucide-react";
+import { X } from "lucide-react";
 
 type Props = {
   images: string[];
@@ -9,7 +9,8 @@ type Props = {
 };
 
 /**
- * Screenshots grid with "View Large" lightbox (reference-style).
+ * Screenshots grid — tiles styled exactly like the reference case-study
+ * page (h-64, zoom on hover, dark overlay, accent "View Large" pill).
  * Falls back to a placeholder tile when a file is missing, so the
  * page never shows broken images while screenshots are being added.
  */
@@ -53,31 +54,35 @@ export default function ProjectGallery({ images, projectTitle }: Props) {
 
   return (
     <>
-      <div className="grid gap-4 sm:grid-cols-2">
+      {/* Exact reference grid + tile styling */}
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         {images.map((src, i) => (
           <button
             key={src + i}
             type="button"
             onClick={() => setOpen(i)}
-            className="group relative aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-ink-850 text-left focus-visible:outline-2 focus-visible:outline-neon-400"
             aria-label={`View screenshot ${i + 1} of ${projectTitle} large`}
+            className="group relative cursor-pointer overflow-hidden rounded-lg text-left shadow-lg transition-all duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-neon-400"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={src}
               alt={`${projectTitle} — screenshot ${i + 1}`}
               loading="lazy"
-              className={`relative h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] ${
+              className={`h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105 ${
                 hasFailed(i) ? "invisible" : ""
               }`}
               onError={() => setFailed((prev) => new Set(prev).add(i))}
             />
             {/* Placeholder — only visible while the file is missing */}
-            {hasFailed(i) && placeholder(i, "text-6xl")}
-            {/* Hover overlay — "View Large" pill */}
-            <span className="absolute inset-0 grid place-items-center bg-ink-950/55 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
-              <span className="flex items-center gap-2 rounded-full border border-white/20 bg-ink-950/70 px-4 py-2 font-mono text-xs text-fog-100">
-                <Maximize2 size={13} className="text-neon-400" />
+            {hasFailed(i) && (
+              <div className="relative h-64 w-full bg-ink-850">
+                {placeholder(i, "text-6xl")}
+              </div>
+            )}
+            {/* Dark overlay + "View Large" pill on hover — exact reference */}
+            <span className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/20">
+              <span className="rounded-full bg-neon-400/90 px-4 py-2 text-sm font-medium text-ink-950 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 View Large
               </span>
             </span>
@@ -108,7 +113,7 @@ export default function ProjectGallery({ images, projectTitle }: Props) {
             onClick={(e) => e.stopPropagation()}
           >
             {hasFailed(open) ? (
-              <div className="grid aspect-[4/3] w-full max-w-3xl place-items-center bg-ink-900/60">
+              <div className="grid h-96 w-full max-w-3xl place-items-center bg-ink-900/60">
                 {placeholder(open, "text-8xl")}
               </div>
             ) : (
