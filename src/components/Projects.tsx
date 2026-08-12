@@ -83,7 +83,7 @@ export default function Projects() {
                       {project.link ? (
                         <a
                           href={project.link}
-                          className="mt-5 flex max-sm:w-full items-center justify-center rounded border border-white/10 bg-white/[0.03] px-6 py-2.5 text-sm font-semibold text-fog-600 min-[480px]:py-[23px] min-[480px]:text-base hover:bg-white/[0.06] transition-colors"
+                          className="mt-5 inline-flex items-center gap-2 rounded border border-white/10 bg-white/[0.03] px-6 py-2.5 text-sm font-semibold text-fog-600 hover:bg-white/[0.06] transition-colors"
                         >
                           Case study
                           <ArrowUpRight size={16} className="ml-1 min-[480px]:ml-3" />
