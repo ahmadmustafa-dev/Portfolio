@@ -1,0 +1,580 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN SYSTEM — "Ink & Neon v3.0 — Grand Atelier"
+   A dark, editorial-technical aesthetic tuned for depth.
+   - Ink: deep graphite-navy surfaces (never pure black)
+   - Fog: warm off-white text scale
+   - Parrot: solid electric lime — the ONLY accent color
+   - Typography: Fraunces (serif accents) / Space Grotesk (UI)
+     / IBM Plex Sans (body) / JetBrains Mono (code & labels)
+   Rule: no color gradients — every accent is flat parrot green.
+   ============================================================ */
+
+@theme {
+  /* ---------- Typography ---------- */
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-plex-sans), ui-sans-serif, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", "Cascadia Mono", monospace;
+
+  /* ---------- Ink (surfaces) ---------- */
+  --color-ink-950: #060910;
+  --color-ink-900: #0a0f18;
+  --color-ink-850: #0f1623;
+  --color-ink-800: #151e2f;
+  --color-ink-700: #20304a;
+  --color-ink-600: #2d4265;
+
+  /* ---------- Fog (text) ---------- */
+  --color-fog-50: #f6f8fb;
+  --color-fog-100: #eaeef5;
+  --color-fog-300: #c3ccdc;
+  --color-fog-500: #8d98ac;
+  --color-fog-600: #6b768a;
+  --color-fog-700: #5b6577;
+
+  /* ---------- Parrot (accent) — flat electric lime ---------- */
+  --color-neon-300: #eaff8f;
+  --color-neon-400: #d3f84b;
+  --color-neon-500: #b6eb1f;
+  --color-neon-600: #94c90f;
+
+  /* ---------- Motion ---------- */
+  --animate-marquee: marquee 55s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 60s linear infinite;
+  --animate-blink: blink 1.1s step-end infinite;
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-pulse-dot: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-fade-up: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-glow-drift: glow-drift 16s ease-in-out infinite alternate;
+  --animate-ring-pulse: ring-pulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-wa-in: wa-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+  --animate-aurora: aurora 34s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
+  --animate-wa-float: wa-float 3s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes glow-drift {
+    0% { transform: translate(-52%, -46%) scale(1); opacity: 0.7; }
+    100% { transform: translate(-46%, -56%) scale(1.18); opacity: 1; }
+  }
+
+  @keyframes ring-pulse {
+    0% { transform: scale(1); opacity: 0.55; }
+    100% { transform: scale(1.7); opacity: 0; }
+  }
+
+  @keyframes wa-in {
+    from { opacity: 0; transform: translateY(24px) scale(0.6); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes wa-float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-4px) scale(1.05); }
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0%); }
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgb(211 248 75 / 0.45); }
+    50% { opacity: 0.85; box-shadow: 0 0 0 6px rgb(211 248 75 / 0); }
+  }
+
+  @keyframes aurora {
+    0% {
+      background-position: 0% 50%, 50% 100%, 100% 0%;
+    }
+    33% {
+      background-position: 50% 100%, 100% 0%, 0% 50%;
+    }
+    66% {
+      background-position: 100% 0%, 0% 50%, 50% 100%;
+    }
+    100% {
+      background-position: 0% 50%, 50% 100%, 100% 0%;
+    }
+  }
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchored sections below the fixed navbar */
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background-color: var(--color-ink-950);
+    color: var(--color-fog-100);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01" on, "cv11" on;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  /* Selection — inverted neon */
+  ::selection {
+    background-color: var(--color-neon-400);
+    color: var(--color-ink-950);
+  }
+
+  /* Focus rings — visible, keyboard-friendly */
+  :focus-visible {
+    outline: 2px solid var(--color-neon-400);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  /* Accessible link styling */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* ============================================================
+   SCROLLBAR — refined, on-theme
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink-950);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-700);
+  border-radius: 8px;
+  border: 2px solid var(--color-ink-950);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-600);
+}
+
+/* ============================================================
+   COMPONENT-LEVEL UTILITIES
+   ============================================================ */
+
+/* Accent text — solid parrot */
+.text-gradient {
+  color: var(--color-neon-300);
+}
+
+/* Luxe serif accent — flat parrot, no gold */
+.text-champ {
+  color: var(--color-neon-400);
+}
+
+/* Hover-fill accent — flat parrot */
+.text-shimmer {
+  color: var(--color-neon-300);
+}
+
+/* Solid hairline between sections */
+.section-sep {
+  border-top: 1px solid rgb(255 255 255 / 0.09);
+}
+
+/* Serif display — editorial "gold foil" voice */
+.text-luxe {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  font-optical-sizing: auto;
+}
+
+/* Metallic sheen sweep on solid buttons */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  height: 100%;
+  width: 45%;
+  background: linear-gradient(
+    105deg,
+    transparent,
+    rgb(255 255 255 / 0.55),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.65s ease;
+  pointer-events: none;
+}
+.btn-shine:hover::after,
+.btn-shine:focus-visible::after {
+  left: 135%;
+}
+
+/* Filled-on-hover display text (stacked ghost + gradient) */
+.hover-fill {
+  position: relative;
+  display: inline-block;
+}
+.hover-fill .fill-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hover-fill:hover .fill-layer,
+.hover-fill:focus-visible .fill-layer {
+  opacity: 1;
+}
+
+/* Blueprint grid background (hero) */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 0%, black 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 0%, black 55%, transparent 100%);
+}
+
+/* Fine dotted texture — subtle premium grain pattern */
+.dots-bg {
+  background-image: radial-gradient(rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Hero "ghost" text */
+.text-ghost-hero {
+  color: transparent;
+  -webkit-text-stroke: 1.6px rgb(246 248 251 / 0.05);
+  text-stroke: 1.6px rgb(246 248 251 / 0.05);
+  filter: blur(1.5px);
+}
+
+/* Spotlight card hover effect — warm neon glow */
+.spotlight-card {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1; /* paint above opaque card backgrounds */
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      800px circle at var(--x) var(--y),
+      rgb(211 248 75 / 0.10),
+      transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+/* Aurora — layered parrot glows (full-bleed backdrop, single hue) */
+.aurora {
+  background-image:
+    radial-gradient(42% 38% at 15% 15%, rgb(182 235 31 / 0.1), transparent 65%),
+    radial-gradient(45% 42% at 85% 8%, rgb(182 235 31 / 0.06), transparent 65%),
+    radial-gradient(50% 50% at 50% 95%, rgb(211 248 75 / 0.05), transparent 70%);
+  background-size: 200% 200%, 180% 180%, 220% 220%;
+  animation: var(--animate-aurora);
+}
+
+/* Fine film grain overlay */
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Soft page vignette — deepens edges for a polished frame */
+.vignette::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(120% 90% at 50% 0%, transparent 55%, rgb(0 0 0 / 0.3) 100%);
+}
+
+/* Scroll-triggered reveal (driven by <Reveal />) */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hairline card — flat surface + solid parrot hairline on hover */
+.card-line {
+  position: relative;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  background: var(--color-ink-900);
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Solid parrot hairline across the top edge on hover */
+.card-line::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--color-neon-400);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.card-line:hover {
+  border-color: rgb(211 248 75 / 0.3);
+  box-shadow:
+    0 24px 60px -24px rgb(0 0 0 / 0.8),
+    0 0 0 1px rgb(211 248 75 / 0.07),
+    0 0 40px -18px rgb(211 248 75 / 0.18);
+}
+
+.card-line:hover::before {
+  opacity: 1;
+}
+
+/* Solid parrot frame — flat border, no gradient */
+.frame-gradient {
+  border: 1px solid rgb(211 248 75 / 0.35);
+  background: var(--color-ink-900);
+  border-radius: inherit;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.group:hover > .frame-gradient,
+.frame-gradient:hover {
+  border-color: rgb(211 248 75 / 0.7);
+  box-shadow: 0 0 24px -8px rgb(211 248 75 / 0.35);
+}
+
+/* Engraved numeral — big ghost index numbers */
+.num-engrave {
+  color: rgb(246 248 251 / 0.08);
+  transition: color 0.3s ease;
+}
+
+/* Gradient headline word */
+.text-ghost {
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(246 248 251 / 0.24);
+}
+
+/* Animated underline that slides in from the left on hover */
+.link-slide {
+  background-image: linear-gradient(to right, var(--color-neon-400), var(--color-neon-400));
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.28s ease;
+}
+.link-slide:hover {
+  background-size: 100% 1px;
+}
+
+/* Barcode flourish — thin varying vertical bars */
+.barcode {
+  background-image: repeating-linear-gradient(
+    90deg,
+    currentColor 0 1px,
+    transparent 1px 3px,
+    currentColor 3px 4px,
+    transparent 4px 6px,
+    currentColor 6px 7px,
+    transparent 7px 9px,
+    currentColor 9px 9.5px,
+    transparent 9.5px 12px
+  );
+}
+
+/* Frantic corner ticks — used to frame imagery */
+.corner-ticks::before,
+.corner-ticks::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--color-neon-400);
+  border-style: solid;
+  transition: width 0.3s ease, height 0.3s ease;
+  z-index: 2;
+}
+.corner-ticks::before {
+  top: 10px;
+  left: 10px;
+  border-width: 1.5px 0 0 1.5px;
+}
+.corner-ticks::after {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 1.5px 1.5px 0;
+}
+.group:hover > .corner-ticks::before,
+.group:hover > .corner-ticks::after {
+  width: 22px;
+  height: 22px;
+}
+
+/* Drop-cap — editorial first paragraph accent */
+.drop-cap::first-letter {
+  font-family: var(--font-serif);
+  font-size: 3.1em;
+  line-height: 0.8;
+  float: left;
+  padding: 0.06em 0.14em 0 0;
+  color: var(--color-neon-400);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ============================================================
+   PREMIUM EFFECTS — cursor, boot intro
+   ============================================================ */
+
+/* Custom cursor — additive neon glow + dot (never hides native cursor) */
+.cursor-glow,
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  will-change: transform;
+}
+.cursor-glow {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(211 248 75 / 0.09), transparent 65%);
+  mix-blend-mode: screen;
+  transition:
+    opacity 0.3s ease,
+    background 0.25s ease;
+}
+.cursor-glow.cursor-visible {
+  opacity: 1;
+}
+.cursor-glow.cursor-active {
+  background: radial-gradient(circle, rgb(211 248 75 / 0.16), transparent 65%);
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-neon-400);
+  box-shadow: 0 0 10px rgb(211 248 75 / 0.9);
+  z-index: 9999;
+  transition:
+    opacity 0.3s ease,
+    width 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.25s ease,
+    border 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.cursor-dot.cursor-visible {
+  opacity: 1;
+}
+.cursor-dot.cursor-active {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid rgb(211 248 75 / 0.55);
+  box-shadow: 0 0 24px rgb(211 248 75 / 0.25), inset 0 0 12px rgb(211 248 75 / 0.12);
+}
+
+/* Boot intro overlay */
+.boot-intro {
+  transition: opacity 0.55s ease;
+}
+.boot-intro.is-done {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Boot progress bar — flat parrot */
+.boot-bar {
+  background: var(--color-neon-400);
+  animation: boot-fill 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes boot-fill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
