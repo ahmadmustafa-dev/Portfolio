@@ -105,7 +105,7 @@ export default function Projects() {
           <div className="mt-8 flex justify-center">
             <a
               href="/projects"
-              className="inline-flex items-center gap-2 rounded border border-white/10 bg-white/[0.03] px-6 py-2.5 text-sm font-semibold text-fog-600 hover:bg-white/[0.06]"
+              className="inline-flex items-center gap-2 rounded border border-white/10 bg-white/[0.03] px-6 py-2.5 text-sm font-semibold text-fog-600 hover:bg-white/[0.06] transition-colors"
             >
               Show all projects
               <ArrowUpRight size={16} />
