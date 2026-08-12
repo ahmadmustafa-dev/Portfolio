@@ -56,7 +56,7 @@ export default function Hero() {
           <span className="h-1.5 w-1.5 rounded-full bg-neon-400/70" />
         </div>
 
-        <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6">
+        <div className="relative mx-auto w-full max-w-6xl px-3 sm:px-5">
           {/* Editorial meta row */}
           <div className="animate-fade-up mb-12 flex items-center justify-between gap-4 border-b border-white/8 pb-4 font-mono text-[11px] uppercase tracking-[0.28em] text-fog-700">
             <span className="flex items-center gap-2.5">

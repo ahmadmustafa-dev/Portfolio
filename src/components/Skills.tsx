@@ -14,7 +14,7 @@ export default function Skills() {
     <section id="skills" className="section-sep relative scroll-mt-24 bg-ink-900/40 py-24 sm:py-32">
       {/* Subtle dotted texture */}
       <div className="dots-bg absolute inset-0 opacity-60" aria-hidden="true" />
-      <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6">
+      <div className="relative mx-auto w-full max-w-6xl px-3 sm:px-5">
         <SectionHeading
           index="02"
           label="Skills"
