@@ -390,6 +390,49 @@ export const projects: Project[] = [
       ],
       demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/8",
     },
+  },
+  {
+    id: "045",
+    year: "2026",
+    title: "Al Hara Cafeteria — Dubai",
+    summary: "A modern restaurant website and digital ordering experience for a lively Dubai cafeteria.",
+    description:
+      "Al Hara Cafeteria is a fast-casual dining brand in Dubai. The project delivered a mobile-first, highly visual website with quick menu discovery, one-click order links, and an admin-friendly CMS for menu updates.",
+    stack: ["Next.js", "React", "Tailwind CSS", "Node.js", "Vercel"],
+    accent: "Warm, Hospitality",
+    image: "/images/Projects_Imgs/Al-Hara-Cafeteria-Dubai/1.webp",
+    link: "/project/045",
+    details: {
+      category: "Web Development",
+      overview: {
+        problemSolved:
+          "Reimagined the cafeteria's online presence to reduce ordering friction, highlight menu categories, and make daily special updates effortless for staff.",
+        targetAudience:
+          "Local diners, office workers and tourists in Dubai looking for fast, fresh meals with clear online ordering options.",
+        whyBuilt:
+          "To modernize the brand, provide a fast menu browsing experience, and simplify promotional updates for the client through an easy CMS workflow.",
+      },
+      role: [
+        "Frontend & UX Developer",
+        "CMS Integration",
+        "Performance Optimization",
+        "Accessibility Improvements",
+      ],
+      features: [
+        "Mobile-first menu gallery with category filters",
+        "One-click WhatsApp & online order links",
+        "CMS-powered daily specials and promo banners",
+        "Image-optimized gallery and fast LCP performance",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/Al-Hara-Cafeteria-Dubai/1.webp",
+        "/images/Projects_Imgs/Al-Hara-Cafeteria-Dubai/2.webp",
+        "/images/Projects_Imgs/Al-Hara-Cafeteria-Dubai/3.webp",
+        "/images/Projects_Imgs/Al-Hara-Cafeteria-Dubai/4.webp",
+        "/images/Projects_Imgs/Al-Hara-Cafeteria-Dubai/5.webp",
+      ],
+      demoUrl: "https://al-hara-cafeteria-restaurant-dubai.vercel.app/",
+    },
   }
 ];
 
