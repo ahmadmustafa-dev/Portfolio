@@ -44,12 +44,12 @@ export default function Footer() {
 
             {/* Contact actions */}
             <div className="flex flex-wrap gap-3 lg:justify-end">
-              <EmailCompose className="btn-shine group inline-flex h-12 items-center gap-2.5 rounded-full bg-neon-400 px-6 font-display text-[14.5px] font-semibold text-ink-950 shadow-[0_8px_28px_-8px_rgb(211_248_75/0.5)] transition-all duration-300 hover:bg-neon-300 hover:shadow-[0_0_32px_rgb(211_248_75/0.45)]">
-                <Mail size={16} />
-                {profile.email}
+              <EmailCompose className="btn-shine group inline-flex max-w-full items-center gap-2.5 rounded-full bg-neon-400 px-6 font-display text-[14.5px] font-semibold text-ink-950 shadow-[0_8px_28px_-8px_rgb(211_248_75/0.5)] transition-all duration-300 hover:bg-neon-300 hover:shadow-[0_0_32px_rgb(211_248_75/0.45)]">
+                <Mail size={16} className="shrink-0" />
+                <span className="min-w-0 break-all">{profile.email}</span>
                 <ArrowUpRight
                   size={15}
-                  className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  className="shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </EmailCompose>
               <a
@@ -91,9 +91,10 @@ export default function Footer() {
           </span>
           <EmailCompose
             align="center"
-            className="relative mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-ink-900/60 px-4 py-2 font-mono text-sm text-fog-500 backdrop-blur transition-colors duration-300 group-hover:border-neon-500/30 group-hover:text-neon-400"
+            className="relative mt-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-ink-900/60 px-4 py-2 font-mono text-sm text-fog-500 backdrop-blur transition-colors duration-300 group-hover:border-neon-500/30 group-hover:text-neon-400"
           >
-            <span className="text-neon-500">➜</span> {profile.email}
+            <span className="shrink-0 text-neon-500">➜</span>
+            <span className="min-w-0 break-all">{profile.email}</span>
           </EmailCompose>
         </div>
       </div>
