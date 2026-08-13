@@ -1,10 +1,28 @@
-import { projects } from "@/lib/data";
+import { useEffect, useState } from "react";
+import { fetchProjects } from "@/lib/api";
+import { projects as fallbackProjects, type Project } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import SpotlightCard from "./SpotlightCard";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function Projects() {
+  const [projects, setProjects] = useState<Project[]>(fallbackProjects);
+
+  useEffect(() => {
+    let mounted = true;
+    fetchProjects()
+      .then((p) => {
+        if (mounted) setProjects(p);
+      })
+      .catch(() => {
+        /* fallback already present */
+      });
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   return (
     <section
       id="work"
@@ -37,6 +55,7 @@ export default function Projects() {
 
         {/* Project card grid */}
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {/* client-side fetch (falls back to built-in data) */}
           {projects.slice(0, 9).map((project, i) => (
             <Reveal key={project.id} delay={(i % 3) * 80}>
               <SpotlightCard className="h-full rounded-lg">
@@ -83,15 +102,15 @@ export default function Projects() {
                       {project.link ? (
                         <a
                           href={project.link}
-                          className="group mt-5 inline-flex items-center gap-2 rounded border border-neon-400/30 px-6 py-2.5 text-sm font-semibold text-white transition-colors duration-300 hover:border-neon-500"
+                          className="group/btn mt-5 flex w-full sm:w-fit items-center justify-center rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 min-[480px]:px-6 min-[480px]:py-2.5 hover:bg-white/[0.06] hover:border-neon-400 transition-colors duration-300"
                         >
                           Case study
-                          <ArrowRight size={16} className="ml-1 min-[480px]:ml-3 transition-transform duration-300 group-hover:translate-x-1" />
+                          <ArrowRight size={18} className="ml-2 transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:text-neon-400" />
                         </a>
                       ) : (
-                        <span className="mt-5 flex max-sm:w-full items-center justify-center rounded border border-neon-400/30  px-6 py-2.5 text-sm font-semibold text-white min-[480px]:py-[23px] min-[480px]:text-base transition-colors duration-300 hover:border-neon-500s">
+                        <span className="mt-5 flex w-full sm:w-fit items-center justify-center rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 min-[480px]:px-6 min-[480px]:py-2.5 cursor-not-allowed opacity-60">
                           Case study soon
-                          <ArrowRight size={16} className="ml-1 min-[480px]:ml-3 transition-transform duration-300 hover:translate-x-1" />
+                          <ArrowRight size={18} className="ml-2" />
                         </span>
                       )}
                     </div>
@@ -100,17 +119,17 @@ export default function Projects() {
               </SpotlightCard>
             </Reveal>
           ))}
-          </div>
-          {/* Show all projects button */}
-          <div className="mt-8 flex justify-center">
-            <a
-              href="/projects"
-              className="inline-flex items-center gap-2 rounded border border-white/10 bg-white/[0.03] px-6 py-2.5 text-sm font-semibold text-fog-600 hover:bg-white/[0.06] transition-colors"
-            >
-              Show all projects
-              <ArrowUpRight size={16} />
-            </a>
-          </div>
+        </div>
+        {/* Show all projects button */}
+        <div className="mt-8 flex justify-center">
+          <a
+            href="/projects"
+            className="inline-flex items-center gap-2 rounded border border-white/10 bg-white/[0.03] px-6 py-2.5 text-sm font-semibold text-fog-600 hover:bg-white/[0.06] transition-colors"
+          >
+            Show all projects
+            <ArrowUpRight size={16} />
+          </a>
+        </div>
 
         <Reveal delay={100}>
           <p className="mt-10 font-mono text-xs text-fog-500">

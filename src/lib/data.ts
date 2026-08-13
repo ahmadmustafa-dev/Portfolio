@@ -283,6 +283,64 @@ export const projects: Project[] = [
       ],
       demoUrl: "https://www.daebak-korean-bbq.com/",
     },
+  },
+  {
+    id: "9",
+    year: "2024",
+    title: "Project Manager Pro | Enterprise Portfolio & Gallery Agent",
+    summary:
+      "A powerful WordPress portfolio plugin for agencies, featuring custom project metadata, high-performance media galleries, and AJAX-powered frontend filtering.",
+    description:
+      "A robust, full-featured project management and showcase plugin for WordPress. Designed for architectural firms and creative agencies, it provides a structured system for tracking professional projects across different locations and clients, featuring a high-performance image gallery with advanced WordPress Media Library integration.",
+    stack: [
+      "HTML5",
+      "CSS3 Grid",
+      "JavaScript (Vanilla/jQuery)",
+      "PHP 8.2",
+      "WordPress Core",
+      "MySQL",
+      "Shortcode API",
+      "Meta Box API",
+      "Media Uploader Integration",
+    ],
+    accent: "Neon, WordPress",
+    image: "/images/Projects_Imgs/Project-Manager-Pro/1.webp",
+    link: "/project/9",
+    details: {
+      category: "Web Development",
+      overview: {
+        problemSolved:
+          "Provided a standardized method for agencies to document and display their project history with consistent metadata (Location, Client, Date) and rich media.",
+        targetAudience:
+          "Architectural firms, construction companies, and creative agencies requiring a professional project portfolio system.",
+        whyBuilt:
+          "To create a scalable, easily deployable project showcase engine that outperforms generic portfolio plugins in both speed and metadata flexibility.",
+      },
+      role: [
+        "Plugin Product Owner",
+        "Backend PHP Developer",
+        "Media Pipeline Engineer",
+        "Tailwind UI Implementation",
+      ],
+      features: [
+        "Custom Post Type 'Project' with unlimited taxonomy and metadata support",
+        "Advanced Media Gallery with drag-and-drop image reordering and captions",
+        "Responsive 3-Column Admin Dashboard for efficient project oversight",
+        "Dynamic Frontend Shortcode [projects_grid] with AJAX-powered filtering",
+        "Location & Client Metadata tracking for better project organization",
+        "High-bandwidth image processing via native WordPress media functions",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/Project-Manager-Pro/1.webp",
+        "/images/Projects_Imgs/Project-Manager-Pro/2.webp",
+        "/images/Projects_Imgs/Project-Manager-Pro/3.webp",
+        "/images/Projects_Imgs/Project-Manager-Pro/4.webp",
+        "/images/Projects_Imgs/Project-Manager-Pro/5.webp",
+        "/images/Projects_Imgs/Project-Manager-Pro/6.webp",
+        "/images/Projects_Imgs/Project-Manager-Pro/7.webp",
+        "/images/Projects_Imgs/Project-Manager-Pro/8.webp",
+      ],
+    },
   }
 ];
 

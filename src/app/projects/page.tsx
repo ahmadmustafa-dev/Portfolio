@@ -1,14 +1,40 @@
-import { projects } from "@/lib/data";
+"use client";
+
+import { useEffect, useState } from "react";
+import { fetchProjects } from "@/lib/api";
+import { projects as fallbackProjects, type Project } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import SpotlightCard from "@/components/SpotlightCard";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 export default function AllProjectsPage() {
+  const [projects, setProjects] = useState<Project[]>(fallbackProjects);
+  const categories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  useEffect(() => {
+    let mounted = true;
+    fetchProjects()
+      .then((p) => {
+        if (mounted) setProjects(p);
+      })
+      .catch(() => {
+        /* swallow — fallback already set */
+      });
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const filteredProjects = projects.filter(
+    (project) => activeCategory === "All" || project.category === activeCategory
+  );
+
   return (
     <section
       id="work"
-      className="section-sep relative scroll-mt-24 bg-ink-900/40 py-24 sm:py-32"
+      className="section-sep relative scroll-mt-24 bg-ink-900/40 py-24 sm:py-32 min-h-screen"
     >
       {/* Ambient neon drift glows */}
       <div
@@ -35,9 +61,27 @@ export default function AllProjectsPage() {
           description="A selection of key full-stack, mobile and automation projects — case studies and screenshots are landing one by one."
         />
 
+        {/* Category Filter */}
+        <Reveal delay={100}>
+          <div className="mt-12 flex flex-wrap items-center justify-start gap-3">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`rounded-full px-5 py-2 text-sm font-semibold transition-all duration-300 ${activeCategory === category
+                    ? "bg-neon-400 text-ink-950 shadow-[0_0_15px_rgba(211,248,75,0.4)] border border-neon-400"
+                    : "bg-white/[0.03] text-fog-500 hover:bg-white/[0.08] hover:text-fog-200 border border-white/10"
+                  }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </Reveal>
+
         {/* Project card grid */}
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {projects.map((project, i) => (
+          {filteredProjects.map((project, i) => (
             <Reveal key={project.id} delay={(i % 3) * 80}>
               <SpotlightCard className="h-full rounded-lg">
                 <article className="card-line group relative h-full overflow-hidden rounded-[calc(0.5rem-1px)] transition-colors duration-300">
@@ -63,6 +107,11 @@ export default function AllProjectsPage() {
 
                   {/* Body */}
                   <div className="relative flex flex-1 flex-col p-4 min-[480px]:p-8">
+                    {/* Category Label */}
+                    <span className="mb-3 inline-block font-mono text-[11px] uppercase tracking-wider text-neon-500/80">
+                      {project.category}
+                    </span>
+
                     {/* Giant watermark ID */}
                     <span
                       aria-hidden="true"
@@ -74,24 +123,24 @@ export default function AllProjectsPage() {
                     <h3 className="pt-1 text-base font-semibold text-fog-50 min-[480px]:text-lg">
                       {project.title}
                     </h3>
-                    <p className="mt-0 text-xs leading-[20px] text-fog-500 min-[480px]:text-[14px]">
+                    <p className="mt-2 text-xs leading-[20px] text-fog-500 min-[480px]:text-[14px]">
                       {project.summary ?? project.description}
                     </p>
 
                     {/* Case Study button */}
-                    <div className="mt-auto">
+                    <div className="mt-auto pt-6">
                       {project.link ? (
                         <a
                           href={project.link}
-                          className="mt-5 flex max-sm:w-full items-center justify-center rounded border border-white/10 bg-white/[0.03] px-6 py-2.5 text-sm font-semibold text-fog-600 min-[480px]:py-[23px] min-[480px]:text-base hover:bg-white/[0.06] transition-colors"
+                          className="group/btn flex w-full sm:w-fit items-center justify-center rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 min-[480px]:px-6 min-[480px]:py-2.5 hover:bg-white/[0.06] hover:border-neon-400 transition-colors duration-300"
                         >
                           Case study
-                          <ArrowUpRight size={16} className="ml-1 min-[480px]:ml-3" />
+                          <ArrowRight size={18} className="ml-2 transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:text-neon-400" />
                         </a>
                       ) : (
-                        <span className="mt-5 flex max-sm:w-full items-center justify-center rounded border border-white/10 bg-white/[0.03] px-6 py-2.5 text-sm font-semibold text-fog-600 min-[480px]:py-[23px] min-[480px]:text-base">
+                        <span className="flex w-full sm:w-fit items-center justify-center rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 min-[480px]:px-6 min-[480px]:py-2.5 cursor-not-allowed opacity-60">
                           Case study soon
-                          <ArrowUpRight size={16} className="ml-1 min-[480px]:ml-3" />
+                          <ArrowRight size={18} className="ml-2" />
                         </span>
                       )}
                     </div>
@@ -102,8 +151,14 @@ export default function AllProjectsPage() {
           ))}
         </div>
 
+        {filteredProjects.length === 0 && (
+          <div className="mt-20 py-20 text-center font-mono text-sm text-fog-500">
+            No projects found in this category.
+          </div>
+        )}
+
         <Reveal delay={100}>
-          <p className="mt-10 font-mono text-xs text-fog-500">
+          <p className="mt-14 font-mono text-xs text-fog-500">
             <span className="text-neon-500">➜</span> Full case studies and client work available on request.
           </p>
         </Reveal>

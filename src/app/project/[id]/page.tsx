@@ -4,13 +4,16 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectGallery from "@/components/ProjectGallery";
-import { projects } from "@/lib/data";
+import { projects as fallbackProjects } from "@/lib/data";
+import { fetchProjectById, fetchProjects } from "@/lib/api";
 
 type Params = { id: string };
 
 /* Prerender every known project — unknown ids 404 */
-export function generateStaticParams(): Params[] {
-  return projects.filter((p) => p.details).map((p) => ({ id: p.id }));
+export async function generateStaticParams(): Promise<Params[]> {
+  // Try remote API first; fall back to local data
+  const items = await fetchProjects();
+  return items.filter((p) => p.details).map((p) => ({ id: p.id }));
 }
 
 export async function generateMetadata({
@@ -19,7 +22,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const project = projects.find((p) => p.id === id);
+  const project = await fetchProjectById(id);
 
   if (!project?.details) {
     return { title: "Project not found — Ahmad Mustafa" };
@@ -43,7 +46,7 @@ function SubHeading({ index, children }: { index: string; children: React.ReactN
 
 export default async function ProjectPage({ params }: { params: Promise<Params> }) {
   const { id } = await params;
-  const project = projects.find((p) => p.id === id);
+  const project = await fetchProjectById(id);
 
   /* No project or no case study written yet → 404 */
   if (!project?.details) notFound();
