@@ -342,6 +342,54 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/Project-Manager-Pro/8.webp",
       ],
     },
+  },
+  {
+    id: "8",
+    year: "2024",
+    title: "Greenshift Query Enhancer | Drag-and-Drop Content Manager",
+    description:
+      "An essential productivity extension for the Greenshift Page Builder ecosystem. This plugin introduces intuitive drag-and-drop post reordering within the WordPress Gutenberg editor, allowing content managers to manually curate the order of items in complex query loops without touching code or database queries.",
+    stack: [
+      "React (wp.element)",
+      "JavaScript (ESNext)",
+      "SASS",
+      "PHP",
+      "Gutenberg REST API",
+      "WordPress Post Meta",
+      "WordPress Hooks/Filters",
+      "WP-Scripts",
+    ],
+    accent: "Neon, WordPress",
+    image: "/images/Projects_Imgs/Greenshift-Query-Enhancer/1.webp",
+    link: "/project/8",
+    details: {
+      category: "Web Development",
+      overview: {
+        problemSolved:
+          "Fixed the lack of manual reordering capabilities in standard query loop blocks, providing a visual way to manage content priority for marketing pages.",
+        targetAudience:
+          "WordPress developers and digital marketers using the Greenshift ecosystem for high-end landing page design.",
+        whyBuilt:
+          "To fill a specific functional gap in one of the world's leading block-based page builders, focusing on enhancing user experience for non-technical editors.",
+      },
+      role: [
+        "Gutenberg Block Developer",
+        "React/WP Element Engineer",
+        "Plugin Architect",
+        "UX/UI Researcher",
+      ],
+      features: [
+        "Seamless React-based Drag-and-Drop sorting within the Block Editor",
+        "Dynamic AJAX data fetching for live post title & meta",
+        "Native integration with Greenshift query loop parameters",
+        "Lightweight PHP backend for persistent order storage",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/Greenshift-Query-Enhancer/1.webp",
+        "/images/Projects_Imgs/Greenshift-Query-Enhancer/2.webp",
+      ],
+      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/8",
+    },
   }
 ];
 
