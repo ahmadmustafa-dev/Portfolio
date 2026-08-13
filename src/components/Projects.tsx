@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import { fetchProjects } from "@/lib/api";
 import { projects as fallbackProjects, type Project } from "@/lib/data";
