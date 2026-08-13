@@ -44,7 +44,7 @@ export default function Footer() {
 
             {/* Contact actions */}
             <div className="flex flex-wrap gap-3 lg:justify-end">
-              <EmailCompose className="btn-shine group inline-flex max-w-full items-center gap-2.5 rounded-full bg-neon-400 px-6 font-display text-[14.5px] font-semibold text-ink-950 shadow-[0_8px_28px_-8px_rgb(211_248_75/0.5)] transition-all duration-300 hover:bg-neon-300 hover:shadow-[0_0_32px_rgb(211_248_75/0.45)]">
+              <EmailCompose className="btn-shine group inline-flex max-w-full items-center gap-2.5 rounded-full bg-neon-400 px-6 py-3 font-display text-[14.5px] font-semibold text-ink-950 shadow-[0_8px_28px_-8px_rgb(211_248_75/0.5)] transition-all duration-300 hover:bg-neon-300 hover:shadow-[0_0_32px_rgb(211_248_75/0.45)]">
                 <Mail size={16} className="shrink-0" />
                 <span className="min-w-0 break-all">{profile.email}</span>
                 <ArrowUpRight
@@ -80,7 +80,7 @@ export default function Footer() {
         >
           CONTACT
         </span>
-        <div className="group relative block px-5 pb-28 pt-14 text-center sm:px-8 sm:pb-36 sm:pt-20">
+        <div className="group relative block px-5 pb-32 pt-20 text-center sm:px-8 sm:pb-40 sm:pt-28">
           <span
             aria-hidden="true"
             className="pointer-events-none absolute left-1/2 top-1/2 h-[140%] w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-neon-500/[0.06] blur-[90px] transition-all duration-500 group-hover:bg-neon-500/[0.1]"
@@ -91,7 +91,7 @@ export default function Footer() {
           </span>
           <EmailCompose
             align="center"
-            className="relative mt-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-ink-900/60 px-4 py-2 font-mono text-sm text-fog-500 backdrop-blur transition-colors duration-300 group-hover:border-neon-500/30 group-hover:text-neon-400"
+            className="relative mt-7 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-ink-900/60 px-6 py-3 font-mono text-sm text-fog-500 backdrop-blur transition-colors duration-300 group-hover:border-neon-500/30 group-hover:text-neon-400"
           >
             <span className="shrink-0 text-neon-500">➜</span>
             <span className="min-w-0 break-all">{profile.email}</span>

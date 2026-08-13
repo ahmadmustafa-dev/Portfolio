@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, IBM_Plex_Sans, JetBrains_Mono, Fraunces } from "next/font/google";
+import "./globals.css";
+import ClientOnly from "@/components/ClientOnly";
 import ScrollProgress from "@/components/ScrollProgress";
 import ScrollToTop from "@/components/ScrollToTop";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CustomCursor from "@/components/CustomCursor";
 import Intro from "@/components/Intro";
-import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -70,12 +71,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${spaceGrotesk.variable} ${plexSans.variable} ${jetbrainsMono.variable} ${fraunces.variable} h-full scroll-smooth antialiased`}
     >
       <body suppressHydrationWarning className="vignette noise flex min-h-full flex-col bg-ink-950 font-sans text-fog-100">
-        <CustomCursor />
-        <Intro />
-        <ScrollProgress />
-        <ScrollToTop />
+        <ClientOnly>
+          <CustomCursor />
+          <Intro />
+          <ScrollProgress />
+          <ScrollToTop />
+          <WhatsAppButton />
+        </ClientOnly>
+
         {children}
-        <WhatsAppButton />
       </body>
     </html>
   );
