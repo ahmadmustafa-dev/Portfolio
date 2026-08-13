@@ -6,10 +6,12 @@ import { projects as fallbackProjects, type Project } from "./data";
 const RAW_BASE = process.env.NEXT_PUBLIC_API_URL || process.env.VITE_API_URL || process.env.API_URL || "";
 export const API_BASE = RAW_BASE ? RAW_BASE.replace(/\/+$/, "") : "";
 
+type ProjectWithFeatured = Project & { featured?: boolean };
+
 async function safeJson(res: Response) {
   try {
     return await res.json();
-  } catch (e) {
+  } catch {
     return null;
   }
 }
@@ -23,23 +25,25 @@ export async function fetchProjects(): Promise<Project[]> {
     const json = await safeJson(res);
     if (!Array.isArray(json)) return fallbackProjects;
     return json as Project[];
-  } catch (e) {
+  } catch {
     // network or parse error — fall back
     return fallbackProjects;
   }
 }
 
 export async function fetchFeaturedProjects(): Promise<Project[]> {
-  if (!API_BASE) return fallbackProjects.filter((p) => (p as any).featured);
+  const isFeatured = (p: Project): boolean => Boolean((p as ProjectWithFeatured).featured);
+
+  if (!API_BASE) return fallbackProjects.filter(isFeatured);
 
   try {
     const res = await fetch(`${API_BASE}/api/projects/featured`);
-    if (!res.ok) return fallbackProjects.filter((p) => (p as any).featured);
+    if (!res.ok) return fallbackProjects.filter(isFeatured);
     const json = await safeJson(res);
-    if (!Array.isArray(json)) return fallbackProjects.filter((p) => (p as any).featured);
+    if (!Array.isArray(json)) return fallbackProjects.filter(isFeatured);
     return json as Project[];
-  } catch (e) {
-    return fallbackProjects.filter((p) => (p as any).featured);
+  } catch {
+    return fallbackProjects.filter(isFeatured);
   }
 }
 
@@ -53,7 +57,7 @@ export async function fetchProjectById(id: string): Promise<Project | undefined>
     const json = await safeJson(res);
     if (!json || typeof json !== "object") return fallbackProjects.find((p) => p.id === id);
     return json as Project;
-  } catch (e) {
+  } catch {
     return fallbackProjects.find((p) => p.id === id);
   }
 }

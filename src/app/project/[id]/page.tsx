@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectGallery from "@/components/ProjectGallery";
-import { projects as fallbackProjects } from "@/lib/data";
 import { fetchProjectById, fetchProjects } from "@/lib/api";
 
 type Params = { id: string };
@@ -196,8 +195,8 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
                 Interested in Similar Work?
               </h2>
               <p className="mx-auto mb-6 max-w-2xl text-sm text-gray-300 sm:text-base lg:mb-8">
-                I'm always excited to take on new challenges and create amazing digital
-                experiences. Let's discuss your next project!
+                I&apos;m always excited to take on new challenges and create amazing digital
+                experiences. Let&apos;s discuss your next project!
               </p>
               {/* Get In Touch — exact reference filled button */}
               <LinkBtn href="/#contact" />

@@ -5,6 +5,7 @@ import { projects as fallbackProjects, type Project } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import SpotlightCard from "./SpotlightCard";
+import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function Projects() {
@@ -64,10 +65,12 @@ export default function Projects() {
                   {/* Image slot */}
                   <div className="relative aspect-video w-full overflow-hidden bg-ink-800">
                     {project.image ? (
-                      <img
+                      <Image
                         src={project.image}
                         alt={project.title}
-                        className="object-cover w-full h-full"
+                        width={1200}
+                        height={900}
+                        className="h-full w-full object-cover"
                       />
                     ) : (
                       <div className="absolute inset-0 grid place-items-center">

@@ -6,11 +6,15 @@ import { projects as fallbackProjects, type Project } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import SpotlightCard from "@/components/SpotlightCard";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 export default function AllProjectsPage() {
   const [projects, setProjects] = useState<Project[]>(fallbackProjects);
-  const categories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
+  const categories = [
+    "All",
+    ...Array.from(new Set(projects.map((p) => p.category ?? p.details?.category ?? "General"))),
+  ];
   const [activeCategory, setActiveCategory] = useState("All");
 
   useEffect(() => {
@@ -27,9 +31,10 @@ export default function AllProjectsPage() {
     };
   }, []);
 
-  const filteredProjects = projects.filter(
-    (project) => activeCategory === "All" || project.category === activeCategory
-  );
+  const filteredProjects = projects.filter((project) => {
+    const projectCategory = project.category ?? project.details?.category ?? "General";
+    return activeCategory === "All" || projectCategory === activeCategory;
+  });
 
   return (
     <section
@@ -88,10 +93,12 @@ export default function AllProjectsPage() {
                   {/* Image slot */}
                   <div className="relative aspect-video w-full overflow-hidden bg-ink-800">
                     {project.image ? (
-                      <img
+                      <Image
                         src={project.image}
                         alt={project.title}
-                        className="object-cover w-full h-full"
+                        width={1200}
+                        height={900}
+                        className="h-full w-full object-cover"
                       />
                     ) : (
                       <div className="absolute inset-0 grid place-items-center">
@@ -109,7 +116,7 @@ export default function AllProjectsPage() {
                   <div className="relative flex flex-1 flex-col p-4 min-[480px]:p-8">
                     {/* Category Label */}
                     <span className="mb-3 inline-block font-mono text-[11px] uppercase tracking-wider text-neon-500/80">
-                      {project.category}
+                      {project.category ?? project.details?.category ?? "General"}
                     </span>
 
                     {/* Giant watermark ID */}

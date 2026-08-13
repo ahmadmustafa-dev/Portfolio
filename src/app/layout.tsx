@@ -66,9 +66,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${plexSans.variable} ${jetbrainsMono.variable} ${fraunces.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="vignette noise flex min-h-full flex-col bg-ink-950 font-sans text-fog-100">
+      <body suppressHydrationWarning className="vignette noise flex min-h-full flex-col bg-ink-950 font-sans text-fog-100">
         <CustomCursor />
         <Intro />
         <ScrollProgress />

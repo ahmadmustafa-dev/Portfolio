@@ -108,6 +108,7 @@ export type Project = {
   title: string;
   description: string;
   summary?: string;
+  category?: string;
   stack: string[];
   accent: string;
   n8n?: boolean;
