@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx"
+    "lint": "eslint"
   },
   "dependencies": {
     "lucide-react": "^1.30.0",
@@ -19,7 +19,6 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "autoprefixer": "^10.5.5",
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
     "postcss": "^8.5.26",
