@@ -31,10 +31,16 @@ export default function AllProjectsPage() {
     };
   }, []);
 
-  const filteredProjects = projects.filter((project) => {
-    const projectCategory = project.category ?? project.details?.category ?? "General";
-    return activeCategory === "All" || projectCategory === activeCategory;
-  });
+  const filteredProjects = projects
+    .filter((project) => {
+      const text = `${project.summary ?? ""} ${project.description ?? ""}`.trim();
+      if (!text || text.toLowerCase().includes("case study soon")) return false;
+      return Boolean(project.link || project.details || project.image || (project.summary && project.summary.trim().length > 25));
+    })
+    .filter((project) => {
+      const projectCategory = project.category ?? project.details?.category ?? "General";
+      return activeCategory === "All" || projectCategory === activeCategory;
+    });
 
   return (
     <section

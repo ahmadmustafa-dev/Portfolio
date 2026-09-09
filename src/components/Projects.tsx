@@ -58,13 +58,11 @@ export default function Projects() {
         {/* Project card grid */}
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {/* client-side fetch (falls back to built-in data) */}
-          {/** Filter out placeholder/empty projects (no useful description, summary, image, details or link) */}
           {projects
-            .filter((p) => {
-              const hasDescription = !!p.description && p.description.trim().length > 20;
-              const hasSummary = !!p.summary && p.summary.trim().length > 5;
-              const hasImageOrDetailsOrLink = !!p.image || !!p.details || !!p.link;
-              return hasDescription || hasSummary || hasImageOrDetailsOrLink;
+            .filter((project) => {
+              const text = `${project.summary ?? ""} ${project.description ?? ""}`.trim();
+              if (!text || text.toLowerCase().includes("case study soon")) return false;
+              return Boolean(project.link || project.details || project.image || (project.summary && project.summary.trim().length > 25));
             })
             .slice(0, 9)
             .map((project, i) => (

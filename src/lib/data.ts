@@ -175,61 +175,6 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "042",
-    year: "2024–25",
-    title: "Operational Analytics",
-    description:
-      "Real-time operational dashboard — Next.js + Laravel, websockets, and role-based auth. React-Query for cache, MySQL, charting to the minute.",
-    stack: ["Next.js", "Laravel", "MySQL", "WebSockets"],
-    accent: "Neon, Full-stack SaaS",
-  },
-  {
-    id: "041",
-    year: "2024",
-    title: "AI Automation",
-    description:
-      "AI workflow suite in n8n — incoming emails, invoices and Slack pings trigger AI agents that extract data and push it to MySQL.",
-    stack: ["n8n", "OpenAI", "MySQL", "Slack API"],
-    accent: "Neon, AI Workflows",
-    n8n: true,
-  },
-  {
-    id: "040",
-    year: "2023–24",
-    title: "Skincare E-commerce",
-    description:
-      "SEO-first store theme + custom WordPress plugin for dynamic pricing and inventory sync. LCP under 2s.",
-    stack: ["PHP", "WordPress", "JavaScript", "WooCommerce"],
-    accent: "Champagne, E-commerce",
-  },
-  {
-    id: "039",
-    year: "2023",
-    title: "Fitness App — Flutter",
-    description:
-      "Cross-platform iOS/Android fitness tracker — progress rings, sync, offline-first.",
-    stack: ["Flutter", "Dart", "Firebase"],
-    accent: "Neon, Mobile",
-  },
-  {
-    id: "038",
-    year: "2022–23",
-    title: "Inventory Suite — MERN",
-    description:
-      "Barcode-stocked inventory engine — Node.js, Express, MongoDB. REST API consumed by Flutter clients.",
-    stack: ["MongoDB", "Express", "React", "Node"],
-    accent: "Neon, MERN",
-  },
-  {
-    id: "037",
-    year: "2021",
-    title: "Restaurant Apps",
-    description:
-      "Menu app + ordering dashboard — Java Android with Firebase Auth, push notifications, order states.",
-    stack: ["Java", "Android", "Firebase"],
-    accent: "Neon, Android",
-  },
-  {
     id: "044",
     year: "2025",
     title: "Daebak Korean BBQ — Modern Dining & Digital Brand Experience",
@@ -478,7 +423,7 @@ export type Role = {
 
 export const experience: Role[] = [
   {
-    period: "2023 — Present",
+    period: "2026 — Present",
     title: "Full-Stack Developer",
     org: "Freelance — Clients worldwide",
     description:
@@ -486,15 +431,15 @@ export const experience: Role[] = [
     tech: ["Next.js", "Laravel", "React", "Flutter", "n8n"],
   },
   {
-    period: "2022 — 2023",
+    period: "2025",
     title: "WordPress Plugin Developer",
-    org: "Agency remote",
+    org: "onsite",
     description:
       "Built custom plugins, pricing engines and payment integrations; brought LCP under 2s across 5 client sites.",
     tech: ["PHP", "WordPress", "React", "MySQL"],
   },
   {
-    period: "2021 — 2022",
+    period: "2026 — Present",
     title: "Mobile App Developer",
     org: "Startup — Android & Flutter",
     description:
