@@ -95,7 +95,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
                       href={details.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded border border-gray-300 bg-white px-6 py-3 text-center text-sm text-gray-700 transition-colors hover:bg-gray-50"
+                      className="rounded border border-neon-400 bg-neon-400 px-6 py-3 text-center text-sm font-semibold text-ink-950 transition-colors hover:bg-neon-300"
                     >
                       Live Demo
                     </a>
