@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
 import { fetchProjects } from "@/lib/api";
 import { projects as fallbackProjects, type Project } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
@@ -11,10 +13,8 @@ import { ArrowRight } from "lucide-react";
 
 export default function AllProjectsPage() {
   const [projects, setProjects] = useState<Project[]>(fallbackProjects);
-  const categories = [
-    "All",
-    ...Array.from(new Set(projects.map((p) => p.category ?? p.details?.category ?? "General"))),
-  ];
+  // Explicit category set per request: All, Web Development, WordPress Plugins
+  const categories = ["All", "Web Development", "WordPress Plugins"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   useEffect(() => {
@@ -31,6 +31,13 @@ export default function AllProjectsPage() {
     };
   }, []);
 
+  const mapCategory = (project: Project) => {
+    const stack = (project.stack ?? []).join(" ").toLowerCase();
+    if (stack.includes("wordpress")) return "WordPress Plugins";
+    // fallback: treat as Web Development
+    return "Web Development";
+  };
+
   const filteredProjects = projects
     .filter((project) => {
       const text = `${project.summary ?? ""} ${project.description ?? ""}`.trim();
@@ -38,15 +45,17 @@ export default function AllProjectsPage() {
       return Boolean(project.link || project.details || project.image || (project.summary && project.summary.trim().length > 25));
     })
     .filter((project) => {
-      const projectCategory = project.category ?? project.details?.category ?? "General";
+      const projectCategory = mapCategory(project);
       return activeCategory === "All" || projectCategory === activeCategory;
     });
 
   return (
-    <section
-      id="work"
-      className="section-sep relative scroll-mt-24 bg-ink-900/40 py-24 sm:py-32 min-h-screen"
-    >
+    <>
+      <Navbar />
+      <section
+        id="work"
+        className="section-sep relative scroll-mt-24 bg-ink-900/40 py-24 sm:py-32 min-h-screen"
+      >
       {/* Ambient neon drift glows */}
       <div
         className="animate-glow-drift absolute -right-40 top-0 h-[420px] w-[420px] rounded-full bg-neon-500/[0.05] blur-[120px]"
@@ -58,6 +67,15 @@ export default function AllProjectsPage() {
       />
 
       <div className="relative mx-auto w-full max-w-6xl px-5 sm:px-8">
+        <div className="mb-6 px-5 sm:px-8">
+          <Link
+            href="/#work"
+            className="mb-4 inline-block rounded-lg bg-gray-200 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-300"
+          >
+            ← Back
+          </Link>
+        </div>
+
         <SectionHeading
           index="04"
           label="Work"
@@ -177,5 +195,6 @@ export default function AllProjectsPage() {
         </Reveal>
       </div>
     </section>
+    </>
   );
 }
