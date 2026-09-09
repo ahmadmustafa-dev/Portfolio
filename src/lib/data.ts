@@ -340,9 +340,10 @@ export const projects: Project[] = [
     id: "045",
     year: "2026",
     title: "Al Hara Cafeteria — Dubai",
-    summary: "A modern restaurant website and digital ordering experience for a lively Dubai cafeteria.",
+    summary:
+      "A modern restaurant website and digital ordering experience for a lively Dubai cafeteria, designed to improve menu discovery, ordering flow, and online brand presence.",
     description:
-      "Al Hara Cafeteria is a fast-casual dining brand in Dubai. The project delivered a mobile-first, highly visual website with quick menu discovery, one-click order links, and an admin-friendly CMS for menu updates.",
+      "Al Hara Cafeteria is a fast-casual dining brand in Dubai. The project delivered a mobile-first, highly visual website with quick menu discovery, one-click order links, and an admin-friendly CMS for menu updates, helping the brand present a more premium and conversion-focused digital experience.",
     stack: ["Next.js", "React", "Tailwind CSS", "Node.js", "Vercel"],
     accent: "Warm, Hospitality",
     image: "/images/Projects_Imgs/Al-Hara-Cafeteria-Dubai/1.webp",
