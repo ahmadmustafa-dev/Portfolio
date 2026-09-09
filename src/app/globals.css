@@ -1,4 +1,7 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 /* ============================================================
    DESIGN SYSTEM — "Ink & Neon v3.0 — Grand Atelier"

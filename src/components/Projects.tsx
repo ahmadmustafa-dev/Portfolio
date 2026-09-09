@@ -58,71 +58,80 @@ export default function Projects() {
         {/* Project card grid */}
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {/* client-side fetch (falls back to built-in data) */}
-          {projects.slice(0, 9).map((project, i) => (
-            <Reveal key={project.id} delay={(i % 3) * 80}>
-              <SpotlightCard className="h-full rounded-lg">
-                <article className="card-line group relative h-full overflow-hidden rounded-[calc(0.5rem-1px)] transition-colors duration-300">
-                  {/* Image slot */}
-                  <div className="relative aspect-video w-full overflow-hidden bg-ink-800">
-                    {project.image ? (
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        width={1200}
-                        height={900}
-                        className="h-full w-full object-cover"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 grid place-items-center">
-                        <span className="select-none font-display text-[5rem] font-bold leading-none tracking-tighter text-fog-600">
-                          {project.id}
-                        </span>
-                        <span className="absolute bottom-3 right-4 font-mono text-[10px] uppercase tracking-[0.22em] text-fog-700">
-                          Screenshot coming soon
-                        </span>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Body */}
-                  <div className="relative flex flex-1 flex-col p-4 min-[480px]:p-8">
-                    {/* Giant watermark ID */}
-                    <span
-                      aria-hidden="true"
-                      className="pointer-events-none absolute -top-6 right-3 hidden select-none font-display text-[4.5rem] font-bold leading-none text-white/[0.03] transition-colors duration-500 group-hover:text-neon-400/[0.07] sm:block"
-                    >
-                      {project.id}
-                    </span>
-
-                    <h3 className="pt-1 text-base font-semibold text-fog-50 min-[480px]:text-lg">
-                      {project.title}
-                    </h3>
-                    <p className="mt-0 text-xs leading-[20px] text-fog-500 min-[480px]:text-[14px]">
-                      {project.summary ?? project.description}
-                    </p>
-
-                    {/* Case Study button */}
-                    <div className="mt-auto">
-                      {project.link ? (
-                        <a
-                          href={project.link}
-                          className="group/btn mt-5 flex w-full sm:w-fit items-center justify-center rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 min-[480px]:px-6 min-[480px]:py-2.5 hover:bg-white/[0.06] hover:border-neon-400 transition-colors duration-300"
-                        >
-                          Case study
-                          <ArrowRight size={18} className="ml-2 transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:text-neon-400" />
-                        </a>
+          {/** Filter out placeholder/empty projects (no useful description, summary, image, details or link) */}
+          {projects
+            .filter((p) => {
+              const hasDescription = !!p.description && p.description.trim().length > 20;
+              const hasSummary = !!p.summary && p.summary.trim().length > 5;
+              const hasImageOrDetailsOrLink = !!p.image || !!p.details || !!p.link;
+              return hasDescription || hasSummary || hasImageOrDetailsOrLink;
+            })
+            .slice(0, 9)
+            .map((project, i) => (
+              <Reveal key={project.id} delay={(i % 3) * 80}>
+                <SpotlightCard className="h-full rounded-lg">
+                  <article className="card-line group relative h-full overflow-hidden rounded-[calc(0.5rem-1px)] transition-colors duration-300">
+                    {/* Image slot */}
+                    <div className="relative aspect-video w-full overflow-hidden bg-ink-800">
+                      {project.image ? (
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          width={1200}
+                          height={900}
+                          className="h-full w-full object-cover"
+                        />
                       ) : (
-                        <span className="mt-5 flex w-full sm:w-fit items-center justify-center rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 min-[480px]:px-6 min-[480px]:py-2.5 cursor-not-allowed opacity-60">
-                          Case study soon
-                          <ArrowRight size={18} className="ml-2" />
-                        </span>
+                        <div className="absolute inset-0 grid place-items-center">
+                          <span className="select-none font-display text-[5rem] font-bold leading-none tracking-tighter text-fog-600">
+                            {project.id}
+                          </span>
+                          <span className="absolute bottom-3 right-4 font-mono text-[10px] uppercase tracking-[0.22em] text-fog-700">
+                            Screenshot coming soon
+                          </span>
+                        </div>
                       )}
                     </div>
-                  </div>
-                </article>
-              </SpotlightCard>
-            </Reveal>
-          ))}
+
+                    {/* Body */}
+                    <div className="relative flex flex-1 flex-col p-4 min-[480px]:p-8">
+                      {/* Giant watermark ID */}
+                      <span
+                        aria-hidden="true"
+                        className="pointer-events-none absolute -top-6 right-3 hidden select-none font-display text-[4.5rem] font-bold leading-none text-white/[0.03] transition-colors duration-500 group-hover:text-neon-400/[0.07] sm:block"
+                      >
+                        {project.id}
+                      </span>
+
+                      <h3 className="pt-1 text-base font-semibold text-fog-50 min-[480px]:text-lg">
+                        {project.title}
+                      </h3>
+                      <p className="mt-0 text-xs leading-[20px] text-fog-500 min-[480px]:text-[14px]">
+                        {project.summary ?? project.description}
+                      </p>
+
+                      {/* Case Study button */}
+                      <div className="mt-auto">
+                        {project.link ? (
+                          <a
+                            href={project.link}
+                            className="group/btn mt-5 flex w-full sm:w-fit items-center justify-center rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 min-[480px]:px-6 min-[480px]:py-2.5 hover:bg-white/[0.06] hover:border-neon-400 transition-colors duration-300"
+                          >
+                            Case study
+                            <ArrowRight size={18} className="ml-2 transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:text-neon-400" />
+                          </a>
+                        ) : (
+                          <span className="mt-5 flex w-full sm:w-fit items-center justify-center rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 min-[480px]:px-6 min-[480px]:py-2.5 cursor-not-allowed opacity-60">
+                            Case study soon
+                            <ArrowRight size={18} className="ml-2" />
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </article>
+                </SpotlightCard>
+              </Reveal>
+            ))}
         </div>
         {/* Show all projects button */}
         <div className="mt-8 flex justify-center">
