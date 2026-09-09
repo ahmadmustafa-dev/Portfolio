@@ -81,7 +81,10 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
                   <h3 className="mb-3 text-lg font-semibold text-fog-50">Tech Stack</h3>
                   <div className="flex flex-wrap gap-2">
                     {project.stack.map((s) => (
-                      <span key={s} className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700">
+                      <span
+                        key={s}
+                        className="rounded-full border border-neon-400/35 bg-neon-400/10 px-3 py-1 text-sm text-neon-300"
+                      >
                         {s}
                       </span>
                     ))}
