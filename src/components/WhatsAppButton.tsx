@@ -39,7 +39,7 @@ export default function WhatsAppButton() {
           aria-hidden="true"
           className="absolute inset-0 rounded-full bg-neon-400/40"
         />
-        <span className="relative flex h-12 w-12 items-center justify-center rounded-full border border-neon-400/60 bg-transparent text-neon-300 transition-all duration-300 hover:scale-105 hover:bg-neon-400 hover:text-ink-950 hover:shadow-[0_10px_36px_-4px_rgb(211_248_75/0.6)]">
+        <span className="relative flex h-12 w-12 items-center justify-center rounded-full border border-neon-400/60 bg-neon-400 text-ink-950 transition-all duration-300 hover:scale-105 hover:bg-neon-300 hover:shadow-[0_10px_36px_-4px_rgb(211_248_75/0.6)]">
           <ArrowUp size={18} strokeWidth={2.3} />
         </span>
       </button>
