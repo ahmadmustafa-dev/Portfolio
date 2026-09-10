@@ -12,9 +12,10 @@ export default function WhatsAppButton() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const nearBottom =
-        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 220;
-      setShowTopButton(nearBottom);
+      // Show the "back to top" button when the user has scrolled down a bit.
+      // Adjust the threshold (200) if a different trigger point is desired.
+      const scrolledDown = window.scrollY > 200;
+      setShowTopButton(scrolledDown);
     };
 
     handleScroll();
