@@ -5,8 +5,7 @@ import { usePathname } from "next/navigation";
 
 /**
  * Next.js preserves scroll position when navigating between routes that
- * share a layout. This resets to the top on every real route change,
- * while leaving hash-anchor jumps (e.g. "/#work") untouched.
+ * share a layout. This resets to the top on every real route change.
  *
  * "instant" is required: the site uses `scroll-smooth` globally, so a
  * plain scrollTo(0,0) would animate from the old position up to the top.

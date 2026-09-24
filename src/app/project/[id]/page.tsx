@@ -202,7 +202,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
                 experiences. Let&apos;s discuss your next project!
               </p>
               {/* Get In Touch — exact reference filled button */}
-              <LinkBtn href="/#contact" />
+              <LinkBtn href="/contact" />
             </div>
           </div>
         </section>
@@ -217,7 +217,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 function LinkBack() {
   return (
     <Link
-      href="/#work"
+      href="/work"
       className="mb-6 inline-block rounded border border-neon-400 bg-neon-400 px-4 py-2 text-sm font-semibold text-ink-950 transition-colors hover:bg-neon-300"
     >
       ← Back

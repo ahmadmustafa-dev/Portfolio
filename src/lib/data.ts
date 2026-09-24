@@ -1074,9 +1074,9 @@ export const experience: Role[] = [
 ];
 
 export const navLinks = [
-  { href: "/#about", label: "About" },
-  { href: "/#skills", label: "Skills" },
-  { href: "/#work", label: "Work" },
-  { href: "/#automation", label: "Automation" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/about", label: "About" },
+  { href: "/skills", label: "Skills" },
+  { href: "/work", label: "Work" },
+  { href: "/automation", label: "Automation" },
+  { href: "/contact", label: "Contact" },
 ];

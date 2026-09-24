@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data";
 
@@ -10,6 +11,7 @@ import { navLinks } from "@/lib/data";
  * pill-highlighted scrollspy. Distinct from a full-width bar.
  */
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("");
@@ -19,9 +21,12 @@ export default function Navbar() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    // Scrollspy: highlight the section currently in view
     const sections = navLinks
-      .map((l) => document.querySelector<HTMLElement>(l.href.replace("/#", "#")))
+      .map((l) => {
+        const id = l.href.replace(/^\//, "").replace(/^#/, "");
+        if (!id) return null;
+        return document.getElementById(id);
+      })
       .filter((el): el is HTMLElement => !!el);
 
     const spy = () => {
@@ -67,13 +72,13 @@ export default function Navbar() {
           {/* Desktop nav — pills with index numbers */}
           <ul className="hidden items-center gap-1 md:flex">
             {navLinks.map((link, i) => {
-              const sectionId = link.href.replace("/#", "");
-              const isActive = active === sectionId;
+              const routeId = link.href.replace(/^\//, "");
+              const isActive = pathname === link.href || (pathname === "/" && active === routeId);
               return (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
-                    aria-current={isActive ? "true" : undefined}
+                    aria-current={isActive ? "page" : undefined}
                     className={`block rounded-full px-3.5 py-1.5 font-mono text-[12.5px] transition-all duration-200 ${
                       isActive
                         ? "bg-neon-400/10 text-neon-300 shadow-[inset_0_0_0_1px_rgb(211_248_75/0.2)]"
@@ -84,7 +89,7 @@ export default function Navbar() {
                       0{i + 1}
                     </span>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
@@ -109,22 +114,27 @@ export default function Navbar() {
       {open && (
         <div className="pointer-events-auto absolute inset-x-4 top-[4.6rem] rounded-2xl border border-neon-500/30 bg-ink-950/95 p-2 shadow-2xl shadow-black/60 backdrop-blur-xl sm:inset-x-6 md:hidden">
           <ul className="space-y-1">
-              {navLinks.map((link, i) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className={`block rounded-xl px-4 py-3 font-mono text-sm transition-colors ${
-                      active === link.href.replace("/#", "")
-                        ? "bg-neon-400/10 text-neon-300"
-                        : "text-fog-300 hover:bg-white/5 hover:text-neon-400"
-                    }`}
-                  >
-                    <span className="mr-2 text-[11px] text-fog-700">0{i + 1}</span>
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {navLinks.map((link, i) => {
+                const routeId = link.href.replace(/^\//, "");
+                const isActive = pathname === link.href || (pathname === "/" && active === routeId);
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      aria-current={isActive ? "page" : undefined}
+                      className={`block rounded-xl px-4 py-3 font-mono text-sm transition-colors ${
+                        isActive
+                          ? "bg-neon-400/10 text-neon-300"
+                          : "text-fog-300 hover:bg-white/5 hover:text-neon-400"
+                      }`}
+                    >
+                      <span className="mr-2 text-[11px] text-fog-700">0{i + 1}</span>
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
         </div>
       )}

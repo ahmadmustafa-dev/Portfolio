@@ -58,6 +58,18 @@ export default function Experience() {
                         </li>
                       ))}
                     </ul>
+                    {role.title.toLowerCase().includes("automation") && (
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {['n8n', 'Zapier', 'Make', 'Airtable', 'Slack', 'Google Workspace'].map((tool) => (
+                          <span
+                            key={tool}
+                            className="rounded-full border border-neon-500/25 bg-neon-500/10 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-neon-200"
+                          >
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </Reveal>
@@ -68,7 +80,7 @@ export default function Experience() {
         {/* Footnote */}
         <Reveal delay={120}>
           <p className="mt-4 flex items-center gap-2 font-mono text-xs text-fog-500">
-            <span className="text-neon-500">➜</span> Earlier chapters: WordPress plugins, freelance micro-sites.
+            <span className="text-neon-500">➜</span> Earlier chapters: WordPress plugins, freelance micro-sites, and workflow automation with n8n, Zapier, and Make.
           </p>
         </Reveal>
       </div>
