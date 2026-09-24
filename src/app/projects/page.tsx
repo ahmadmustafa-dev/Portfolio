@@ -13,8 +13,17 @@ import { ArrowRight } from "lucide-react";
 
 export default function AllProjectsPage() {
   const [projects, setProjects] = useState<Project[]>(fallbackProjects);
-  // Explicit category set per request: All, Web Development, WordPress Plugins
-  const categories = ["All", "Web Development", "WordPress Plugins"];
+  const orderedCategories = [
+    "All",
+    "Customer Relationship Management (CRM)",
+    "Full-Stack Web Development",
+    "WordPress Plugin Development",
+    "AI-Powered WordPress Plugin Development",
+    "WordPress Website Development",
+    "WordPress eCommerce Platform",
+    "Web Development",
+    "Mobile Applications",
+  ];
   const [activeCategory, setActiveCategory] = useState("All");
 
   useEffect(() => {
@@ -31,12 +40,20 @@ export default function AllProjectsPage() {
     };
   }, []);
 
-  const mapCategory = (project: Project) => {
-    const stack = (project.stack ?? []).join(" ").toLowerCase();
-    if (stack.includes("wordpress")) return "WordPress Plugins";
-    // fallback: treat as Web Development
-    return "Web Development";
-  };
+  const categories = Array.from(
+    new Set(
+      projects
+        .map((project) => project.category ?? project.details?.category ?? "Web Development")
+        .filter(Boolean),
+    ),
+  ).sort((a, b) => {
+    const aIndex = orderedCategories.indexOf(a);
+    const bIndex = orderedCategories.indexOf(b);
+    if (aIndex === -1 && bIndex === -1) return a.localeCompare(b);
+    if (aIndex === -1) return 1;
+    if (bIndex === -1) return -1;
+    return aIndex - bIndex;
+  });
 
   const filteredProjects = projects
     .filter((project) => {
@@ -45,7 +62,7 @@ export default function AllProjectsPage() {
       return Boolean(project.link || project.details || project.image || (project.summary && project.summary.trim().length > 25));
     })
     .filter((project) => {
-      const projectCategory = mapCategory(project);
+      const projectCategory = project.category ?? project.details?.category ?? "Web Development";
       return activeCategory === "All" || projectCategory === activeCategory;
     });
 
@@ -93,7 +110,10 @@ export default function AllProjectsPage() {
         {/* Category Filter */}
         <Reveal delay={100}>
           <div className="mt-12 flex flex-wrap items-center justify-start gap-3">
-            {categories.map((category) => (
+            {[
+              "All",
+              ...categories.filter((category) => category !== "All"),
+            ].map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
