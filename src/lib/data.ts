@@ -379,7 +379,631 @@ export const projects: Project[] = [
       ],
       demoUrl: "https://al-hara-cafeteria-restaurant-dubai.vercel.app/",
     },
-  }
+  },
+  {
+    id: "1",
+    year: "2025",
+    title: "Garage ERP SaaS | Multi-Tenant Workshop & Customer Portal Platform",
+    summary:
+      "A multi-tenant SaaS ERP system for car repair workshops with job workflow automation, accounting integration, customer portal, and subscription billing.",
+    description:
+      "Garage ERP SaaS is a production-grade, multi-tenant business management system designed specifically for car repair workshops. Built with SaaS-first architecture, the platform standardizes the entire workshop lifecycle from intake and inspection to invoicing, accounting, and customer retention. The system includes dual login portals (Garage & Customer), subscription-based tenant management, feature request voting, automated reminders, and a finance-integrated job card workflow.",
+    stack: [
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "React",
+      "Tailwind CSS",
+      "Stripe",
+      "REST APIs",
+      "RBAC",
+    ],
+    accent: "SaaS, Garage & CRM",
+    image: "/images/Projects_Imgs/Garage-ERP-SaaS/1.webp",
+    link: "/project/1",
+    details: {
+      category: "Customer Relationship Management (CRM)",
+      overview: {
+        problemSolved:
+          "Automated workshop operations and customer lifecycle management for multi-tenant repair businesses needing one unified SaaS platform for operations, billing, and service tracking.",
+        targetAudience:
+          "Car repair workshops, multi-location garages, and service businesses scaling operations across teams, customers, and subscriptions.",
+        whyBuilt:
+          "To create a SaaS platform that standardizes operations and customer experience while reducing manual admin friction across car repair businesses.",
+      },
+      role: [
+        "Lead Full-Stack Developer",
+        "SaaS Architect",
+        "CRM Workflow Engineer",
+        "Finance & Billing Integration",
+      ],
+      features: [
+        "Multi-tenant garage dashboard and business admin console",
+        "Customer portal with job status tracking and reminders",
+        "Invoice, accounting, and subscription billing workflow",
+        "Role-based access and operational permissions",
+        "Feature voting and request management for tenants",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/Garage-ERP-SaaS/1.webp",
+        "/images/Projects_Imgs/Garage-ERP-SaaS/2.webp",
+        "/images/Projects_Imgs/Garage-ERP-SaaS/3.webp",
+      ],
+      demoUrl: "https://garageerp.com/",
+    },
+  },
+  {
+    id: "2",
+    year: "2025",
+    title: "Ledgrz | Enterprise Modular Business Management System",
+    summary:
+      "A scalable Laravel ERP system with custom-built modules for WhatsApp automation, enterprise data backups, and real-time logistics tracking.",
+    description:
+      "Ledgrz is a high-performance, modular ERP and business management system built on Laravel. As a lead module architect, I engineered critical infrastructure including automated Backup Management, secure WhatsApp API Integration for real-time notifications, and a sophisticated Vehicle tracking system. This project demonstrates expert-level PHP, Laravel architecture, and seamless third-party API implementation.",
+    stack: [
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "WhatsApp API",
+      "Bootstrap",
+      "REST APIs",
+      "Admin Panels",
+    ],
+    accent: "ERP, Logistics & Automation",
+    image: "/images/Projects_Imgs/Ledgrz/1.webp",
+    link: "/project/2",
+    details: {
+      category: "Customer Relationship Management (CRM)",
+      overview: {
+        problemSolved:
+          "Needed a modular enterprise workspace for managing backup systems, vehicle operations, communication, and internal workflow automation without fragile manual operations.",
+        targetAudience:
+          "Growing enterprise teams and logistics-led businesses that depend on real-time tracking, notifications, and secure operational data flows.",
+        whyBuilt:
+          "To build a flexible ERP foundation that supports multiple business modules while keeping performance, security, and extensibility high.",
+      },
+      role: [
+        "Module Architect",
+        "Laravel Backend Developer",
+        "WhatsApp Automation Engineer",
+        "Systems Integration Lead",
+      ],
+      features: [
+        "Custom ERP modules for operations and workflow management",
+        "Automated backup scheduling and recovery management",
+        "WhatsApp notification and alert system",
+        "Vehicle tracking and logistics monitoring",
+        "Enterprise-grade admin dashboards",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/Ledgrz/1.webp",
+        "/images/Projects_Imgs/Ledgrz/2.webp",
+        "/images/Projects_Imgs/Ledgrz/3.webp",
+      ],
+      demoUrl: "https://ledgrz.com/",
+    },
+  },
+  {
+    id: "4",
+    year: "2025",
+    title: "TradePro | High-Performance Proprietary Trading Platform",
+    summary:
+      "A sophisticated FinTech solution for prop trading with multi-phase evaluation challenges, secure crypto payments, and real-time P&L analytics.",
+    description:
+      "TradePro is a high-performance proprietary trading platform engineered for secure evaluation flows, real-time portfolio insights, and operational scale. The system supports challenge-based account progression, payment processing, risk analytics, and account dashboards for traders seeking transparent evaluation journeys.",
+    stack: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+      "Stripe",
+      "JWT",
+      "WebSockets",
+    ],
+    accent: "FinTech, Prop Trading",
+    image: "/images/Projects_Imgs/TradePro/1.webp",
+    link: "/project/4",
+    details: {
+      category: "Full-Stack Web Development",
+      overview: {
+        problemSolved:
+          "Needed a secure, modern platform for prop trading firms to run evaluation challenges, manage payments, and maintain clear client performance visibility in one place.",
+        targetAudience:
+          "Prop trading firms, performance traders, and operators needing a scalable, investor-friendly trading challenge ecosystem.",
+        whyBuilt:
+          "To deliver a modern trading infrastructure that handles challenge progression, analytics, and secure transaction flows with speed and clarity.",
+      },
+      role: [
+        "Full-Stack Developer",
+        "Product Architect",
+        "Analytics & Dashboard Engineer",
+        "Payment System Integrator",
+      ],
+      features: [
+        "Multi-phase evaluation challenge workflow",
+        "Secure crypto and payment processing",
+        "Real-time profit and loss analytics",
+        "Trader dashboard with account visibility",
+        "Transparent challenge progression and status tracking",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/TradePro/1.webp",
+        "/images/Projects_Imgs/TradePro/2.webp",
+        "/images/Projects_Imgs/TradePro/3.webp",
+      ],
+      demoUrl: "https://tradepro.com/",
+    },
+  },
+  {
+    id: "6",
+    year: "2024",
+    title: "Soccer Stats & League Manager | Sports Administration System",
+    summary:
+      "An all-in-one WordPress soccer management suite featuring team analytics, automated scheduling, and a dedicated referee control portal.",
+    description:
+      "This project delivers a complete sports administration infrastructure for soccer clubs and leagues. It includes competitive analytics, scheduling orchestration, custom team management, and a dedicated referee portal for match-day operations. The system is designed to help admins manage league flow with clarity and efficiency.",
+    stack: [
+      "WordPress",
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "React",
+      "Custom Post Types",
+      "Gutenberg",
+      "Admin UI",
+    ],
+    accent: "Sports Admin, WordPress",
+    image: "/images/Projects_Imgs/Soccer-Stats-League-Manager/1.webp",
+    link: "/project/6",
+    details: {
+      category: "WordPress Plugin Development",
+      overview: {
+        problemSolved:
+          "Built a tailored competition and team management system that replaces fragmented manual scheduling and organization for soccer operations.",
+        targetAudience:
+          "Soccer leagues, clubs, administrators, referees, and sports managers needing a structured digital command center.",
+        whyBuilt:
+          "To centralize team data, schedules, and referee workflows into one admin-facing experience for better league organization.",
+      },
+      role: [
+        "Plugin Product Developer",
+        "Backend Integrations",
+        "Admin Workflow Designer",
+        "WordPress System Engineer",
+      ],
+      features: [
+        "League and team management portal",
+        "Automated schedule generation and data display",
+        "Referee control interface for match operations",
+        "Stats and performance reporting panels",
+        "WordPress-native admin experience",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/Soccer-Stats-League-Manager/1.webp",
+        "/images/Projects_Imgs/Soccer-Stats-League-Manager/2.webp",
+        "/images/Projects_Imgs/Soccer-Stats-League-Manager/3.webp",
+      ],
+      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/6",
+    },
+  },
+  {
+    id: "7",
+    year: "2024",
+    title: "AI Dental Treatment Planner | GPT-4 Powered Clinical Assistant",
+    summary:
+      "An AI-driven dental clinical tool that uses GPT-4 to generate personalized treatment plans and professional PDF reports for patients.",
+    description:
+      "The AI Dental Treatment Planner is a clinical assistant designed to help dentists generate tailored treatment plans quickly and professionally. By combining WordPress workflow tools, structured patient input, and GPT-4-powered analysis, the product creates patient-friendly recommendations and downloadable PDF reports.",
+    stack: [
+      "WordPress",
+      "PHP",
+      "OpenAI GPT-4",
+      "React",
+      "JavaScript",
+      "PDF Generation",
+      "Custom Admin UI",
+      "MySQL",
+    ],
+    accent: "AI, Clinical tools",
+    image: "/images/Projects_Imgs/AI-Dental-Treatment-Planner/1.webp",
+    link: "/project/7",
+    details: {
+      category: "AI-Powered WordPress Plugin Development",
+      overview: {
+        problemSolved:
+          "Reduced dentist workload by automating treatment-plan drafting while maintaining professional clinical communication and reporting quality.",
+        targetAudience:
+          "Dental clinics, orthodontists, cosmetic dentists, and practice managers using WordPress and looking for AI-assisted treatment workflows.",
+        whyBuilt:
+          "To merge AI capabilities with the clinical process in a user-friendly way that saves time without sacrificing medical clarity.",
+      },
+      role: [
+        "AI Product Developer",
+        "WordPress Plugin Engineer",
+        "Clinical Workflow Designer",
+        "Frontend Integration Lead",
+      ],
+      features: [
+        "GPT-4 powered treatment planning workflow",
+        "Structured patient input and exam data capture",
+        "Professional PDF report generation",
+        "Practice-friendly dashboard and admin controls",
+        "AI-generated treatment recommendations",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/AI-Dental-Treatment-Planner/1.webp",
+        "/images/Projects_Imgs/AI-Dental-Treatment-Planner/2.webp",
+        "/images/Projects_Imgs/AI-Dental-Treatment-Planner/3.webp",
+      ],
+      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/7",
+    },
+  },
+  {
+    id: "10",
+    year: "2024",
+    title: "AI socialReviews Aggregator | Intelligent Social Proof Engine",
+    summary:
+      "A multi-platform review aggregator with AI-generated summaries, location-aware filtering, and high-speed caching for WordPress.",
+    description:
+      "The AI socialReviews Aggregator centralizes customer reviews from multiple platforms, applies AI-based summarization, and delivers location-aware product proof to businesses. It is built for speed and clarity, helping brands surface reputation and social proof in a clean, conversion-ready format.",
+    stack: [
+      "WordPress",
+      "PHP",
+      "React",
+      "JavaScript",
+      "OpenAI",
+      "MySQL",
+      "Caching",
+      "APIs",
+    ],
+    accent: "AI Reviews, WordPress",
+    image: "/images/Projects_Imgs/AI-socialReviews-Aggregator/1.webp",
+    link: "/project/10",
+    details: {
+      category: "AI-Powered WordPress Plugin Development",
+      overview: {
+        problemSolved:
+          "Consolidated review data from multiple channels into a digestible experience and helped businesses turn scattered social proof into actionable marketing assets.",
+        targetAudience:
+          "Brands, agencies, and local businesses needing easy review aggregation and social proof for sales and SEO performance.",
+        whyBuilt:
+          "To give businesses a single intelligent review layer that reduces manual curation and increases trust signals on-site.",
+      },
+      role: [
+        "AI Plugin Engineer",
+        "Review Architecture Developer",
+        "Performance Optimization Lead",
+        "WordPress Integration Specialist",
+      ],
+      features: [
+        "Multi-source review aggregation",
+        "AI summary generation for trust signals",
+        "Location-aware filtering and ranking",
+        "High-speed caching and performance optimization",
+        "WordPress-shortcode-ready content output",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/AI-socialReviews-Aggregator/1.webp",
+        "/images/Projects_Imgs/AI-socialReviews-Aggregator/2.webp",
+        "/images/Projects_Imgs/AI-socialReviews-Aggregator/3.webp",
+      ],
+      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/10",
+    },
+  },
+  {
+    id: "11",
+    year: "2024",
+    title: "DMT Digital Agency Hub | Multi-Service Marketing Platform",
+    summary:
+      "An enterprise-level agency website for DMT, optimized for high-volume lead generation and global service showcasing.",
+    description:
+      "DMT Digital Agency Hub is a polished, conversion-focused digital marketing platform designed to showcase agencies’ service ecosystems and capture leads through a strong, well-structured web experience. The build focuses on performance, messaging clarity, and conversion-first journey design.",
+    stack: [
+      "WordPress",
+      "PHP",
+      "JavaScript",
+      "CSS3",
+      "SEO",
+      "Lead Forms",
+      "Responsive Design",
+      "WordPress CMS",
+    ],
+    accent: "Marketing, Lead Generation",
+    image: "/images/Projects_Imgs/DMT-Digital-Agency-Hub/1.webp",
+    link: "/project/11",
+    details: {
+      category: "WordPress Website Development",
+      overview: {
+        problemSolved:
+          "Needed a cleaner, higher-converting agency website that positioned multiple services clearly and improved inbound lead capture at scale.",
+        targetAudience:
+          "Marketing clients, service buyers, and businesses seeking digital agency support across multiple channels and industries.",
+        whyBuilt:
+          "To create a strong digital storefront that mirrors the agency’s expertise while converting traffic into service inquiries.",
+      },
+      role: [
+        "WordPress Developer",
+        "UX Strategy Contributor",
+        "Lead Generation Designer",
+        "Performance Optimization Engineer",
+      ],
+      features: [
+        "Service-heavy marketing architecture",
+        "Conversion-first page layouts and CTAs",
+        "Responsive, premium branded experience",
+        "SEO-friendly content structure",
+        "Lead generation and inquiry flow",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/DMT-Digital-Agency-Hub/1.webp",
+        "/images/Projects_Imgs/DMT-Digital-Agency-Hub/2.webp",
+        "/images/Projects_Imgs/DMT-Digital-Agency-Hub/3.webp",
+      ],
+      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/11",
+    },
+  },
+  {
+    id: "13",
+    year: "2024",
+    title: "SKEK GEAR | US City-Targeted WooCommerce Store with Local SEO Architecture",
+    summary:
+      "A WooCommerce-based hoodie store built with city-targeted SEO landing pages to capture localized U.S. search traffic.",
+    description:
+      "SKEK GEAR is a city-focused eCommerce storefront built to rank and convert across regional U.S. search demand. The system combines a performant WooCommerce foundation with local SEO architecture, product presentation, and conversion-focused store design for high-intent product discovery.",
+    stack: [
+      "WooCommerce",
+      "WordPress",
+      "PHP",
+      "SEO",
+      "JavaScript",
+      "Tailwind CSS",
+      "Product UX",
+      "Local Landing Pages",
+    ],
+    accent: "E-commerce, Local SEO",
+    image: "/images/Projects_Imgs/SKEK-GEAR/1.webp",
+    link: "/project/13",
+    details: {
+      category: "WordPress eCommerce Platform",
+      overview: {
+        problemSolved:
+          "Designed a geographically targeted storefront to capture local buyer intent and improve quality traffic acquisition through city-specific SEO design.",
+        targetAudience:
+          "U.S.-based shoppers, local product audiences, and stores needing region-targeted digital marketing synergy.",
+        whyBuilt:
+          "To combine a high-converting storefront with local search architecture so the business could win regional traffic without excessive ad spend.",
+      },
+      role: [
+        "WooCommerce Developer",
+        "E-commerce UX Engineer",
+        "SEO Landing Page Architect",
+        "Storefront Optimization Lead",
+      ],
+      features: [
+        "City-targeted SEO landing pages",
+        "Conversion-focused WooCommerce layout",
+        "Product presentation optimized for sales",
+        "Localized shopping experience and regional strategy",
+        "High-velocity storefront performance",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/SKEK-GEAR/1.webp",
+        "/images/Projects_Imgs/SKEK-GEAR/2.webp",
+        "/images/Projects_Imgs/SKEK-GEAR/3.webp",
+      ],
+      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/13",
+    },
+  },
+  {
+    id: "18",
+    year: "2025",
+    title: "Via Kashmir Itinerary & CRM | Premium B2B Travel Platform",
+    summary:
+      "A high-performance SaaS platform featuring an automated Itinerary Builder, Lead CRM, and financial tracking for travel agencies.",
+    description:
+      "Via Kashmir is a premium B2B travel platform built to streamline planning, lead management, and financial control for travel agencies. The application combines itinerary generation, CRM workflows, and operational reporting to help agencies manage bookings more efficiently.",
+    stack: [
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "React",
+      "Tailwind CSS",
+      "Travel CRM",
+      "Reporting",
+      "Admin Workflow",
+    ],
+    accent: "Travel SaaS, CRM",
+    image: "/images/Projects_Imgs/Via-Kashmir-Itinerary-CRM/1.webp",
+    link: "/project/18",
+    details: {
+      category: "Customer Relationship Management (CRM)",
+      overview: {
+        problemSolved:
+          "Needed a unified system for travel agency leads, itinerary planning, and financial tracking to replace disconnected spreadsheets and operational overhead.",
+        targetAudience:
+          "Travel agencies, B2B tour operators, and destination managers handling multiple itineraries and client interactions.",
+        whyBuilt:
+          "To create a useful operational system that keeps itinerary planning, client relations, and sales workflows visible in one place.",
+      },
+      role: [
+        "Full-Stack Developer",
+        "CRM Product Engineer",
+        "Travel Workflow Designer",
+        "SaaS Systems Integrator",
+      ],
+      features: [
+        "Automated itinerary builder",
+        "Lead and customer CRM tracking",
+        "Financial reporting and agency records",
+        "Booking workflow dashboards",
+        "Operational visibility across client travel pipelines",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/Via-Kashmir-Itinerary-CRM/1.webp",
+        "/images/Projects_Imgs/Via-Kashmir-Itinerary-CRM/2.webp",
+        "/images/Projects_Imgs/Via-Kashmir-Itinerary-CRM/3.webp",
+      ],
+      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/18",
+    },
+  },
+  {
+    id: "19",
+    year: "2025",
+    title: "Qckserve | Multi-Vertical Business Services Ecosystem",
+    summary:
+      "A comprehensive multi-vertical marketplace for professional services, real estate, and digital commerce.",
+    description:
+      "Qckserve is a multi-vertical digital ecosystem bringing together local service discovery, real estate listings, and commerce-related business operations within one scalable web platform. The platform is designed to support broad marketplace discovery and conversion across multiple service lines.",
+    stack: [
+      "Next.js",
+      "React",
+      "Laravel",
+      "Node.js",
+      "Tailwind CSS",
+      "Marketplace UX",
+      "REST APIs",
+      "Database Design",
+    ],
+    accent: "Marketplace, Services",
+    image: "/images/Projects_Imgs/Qckserve/1.webp",
+    link: "/project/19",
+    details: {
+      category: "Full-Stack Web Development",
+      overview: {
+        problemSolved:
+          "Built a unified marketplace platform to centralize different service verticals and give businesses a single entry point for discovery, inquiry, and commerce flows.",
+        targetAudience:
+          "Service providers, real estate operators, commerce businesses, and users looking for multi-vertical local discovery.",
+        whyBuilt:
+          "To unify multiple business categories into a cohesive digital experience while keeping architecture modular and easy to scale.",
+      },
+      role: [
+        "Full-Stack Developer",
+        "Marketplace Architect",
+        "Frontend Product Lead",
+        "Platform Scalability Engineer",
+      ],
+      features: [
+        "Multi-vertical business discovery layout",
+        "Marketplace UX patterns for service conversion",
+        "Modular system architecture for multiple categories",
+        "Scalable backend with business logic separation",
+        "Responsive experience across device sizes",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/Qckserve/1.webp",
+        "/images/Projects_Imgs/Qckserve/2.webp",
+        "/images/Projects_Imgs/Qckserve/3.webp",
+      ],
+      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/19",
+    },
+  },
+  {
+    id: "22",
+    year: "2025",
+    title: "Henna by Eishah — Luxury Bridal & Occasion Henna Artistry",
+    summary:
+      "A sophisticated, high-aesthetic web platform for a luxury bespoke bridal and occasion henna artist, featuring service galleries, a booking process breakdown, and client testimonials.",
+    description:
+      "Henna by Eishah is a luxury bridal and occasion henna artistry brand. The website was designed to reflect a premium, intimate experience through elegant visuals, ceremony-focused service storytelling, strong portfolio galleries, and a clear client journey for bookings and inquiries.",
+    stack: [
+      "React",
+      "Tailwind CSS",
+      "JavaScript",
+      "Responsive Design",
+      "SEO",
+      "Brand Storytelling",
+      "Booking UX",
+      "CMS",
+    ],
+    accent: "Luxury Branding, Weddings",
+    image: "/images/Projects_Imgs/Henna-by-Eishah/1.webp",
+    link: "/project/22",
+    details: {
+      category: "Web Development",
+      overview: {
+        problemSolved:
+          "Needed a premium web presence that matched the artistry and emotional positioning of the brand while helping clients discover services and book confidently.",
+        targetAudience:
+          "Brides, event planners, and clients seeking premium henna artistry for weddings and special occasions.",
+        whyBuilt:
+          "To turn the brand’s visual identity into a polished digital experience with stronger trust and conversion opportunities.",
+      },
+      role: [
+        "Frontend Developer",
+        "Brand Experience Designer",
+        "UX/UI Developer",
+        "Booking Journey Optimizer",
+      ],
+      features: [
+        "Elegant luxury branding and editorial design",
+        "Portfolio gallery with service presentation",
+        "Booking and inquiry journey improvements",
+        "Client testimonial and trust signals",
+        "Mobile-first conversion experience",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/Henna-by-Eishah/1.webp",
+        "/images/Projects_Imgs/Henna-by-Eishah/2.webp",
+        "/images/Projects_Imgs/Henna-by-Eishah/3.webp",
+      ],
+      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/22",
+    },
+  },
+  {
+    id: "23",
+    year: "2025",
+    title: "Invoice & CRM Management Mobile App",
+    summary:
+      "A cross-platform mobile CRM and invoicing solution built with Flutter, allowing business owners, staff, and clients to manage invoices, payments, customer ledgers, and granular permissions on the go.",
+    description:
+      "Invoice & CRM Management Mobile App is a cross-platform mobile management platform for modern businesses. It combines customer relationship tools, invoice creation, payment visibility, and permission-based access into a single mobile-first experience designed for owners and teams to operate from anywhere.",
+    stack: [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "REST APIs",
+      "Mobile App Design",
+      "State Management",
+      "Authentication",
+      "Flutter UI",
+    ],
+    accent: "Mobile App, CRM",
+    image: "/images/Projects_Imgs/Invoice-CRM-Mobile-App/1.webp",
+    link: "/project/23",
+    details: {
+      category: "Mobile Applications",
+      overview: {
+        problemSolved:
+          "Needed a mobile-friendly CRM and invoicing system that let business teams track clients, payment status, and account history without depending on desktop-only workflows.",
+        targetAudience:
+          "Small businesses, service firms, and management teams needing mobile-first financial and customer operations tools.",
+        whyBuilt:
+          "To create a mobile-first customer and payment management system with clearer workflows and better on-the-go access to business operations.",
+      },
+      role: [
+        "Mobile App Developer",
+        "CRM UX Designer",
+        "Flutter Developer",
+        "Cross-Platform Engineer",
+      ],
+      features: [
+        "Client and invoice management dashboard",
+        "Permission-based user roles and staff access",
+        "Payment and ledger tracking",
+        "Mobile-first business operations workflow",
+        "Responsive customer relationship management",
+      ],
+      screenshots: [
+        "/images/Projects_Imgs/Invoice-CRM-Mobile-App/1.webp",
+        "/images/Projects_Imgs/Invoice-CRM-Mobile-App/2.webp",
+        "/images/Projects_Imgs/Invoice-CRM-Mobile-App/3.webp",
+      ],
+      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/23",
+    },
+  },
 ];
 
 export type Automation = {

@@ -85,7 +85,7 @@ export default function Hero() {
 
               {/* Headline */}
               <h1 className="text-[clamp(3.2rem,8vw,6.2rem)] font-bold leading-[1.02] tracking-tight text-fog-50">
-                <span className="text-luxe text-champ italic">Ahmad</span>
+                <span className="text-luxe text-champ italic">Ahmad Mustafa</span>
                 <span className="text-neon-400">.</span>
                 <br />
                 <span className="relative inline-block">
