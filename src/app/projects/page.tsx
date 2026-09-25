@@ -65,12 +65,21 @@ export default function AllProjectsPage() {
       const projectCategory = project.category ?? project.details?.category ?? "Web Development";
       if (activeCategory === "All") return true;
       if (projectCategory === activeCategory) return true;
+
       // Include AI-powered WordPress plugins when filtering for general WordPress plugins
       if (
         activeCategory === "WordPress Plugin Development" &&
         projectCategory === "AI-Powered WordPress Plugin Development"
       )
         return true;
+
+      // Include CRM projects when filtering for Full-Stack Web Development
+      if (
+        activeCategory === "Full-Stack Web Development" &&
+        projectCategory === "Customer Relationship Management (CRM)"
+      )
+        return true;
+
       return false;
     });
 
