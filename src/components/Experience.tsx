@@ -59,7 +59,10 @@ export default function Experience() {
                       ))}
                     </ul>
                     {role.title.toLowerCase().includes("automation") && (
-                      <div className="mt-4 flex flex-wrap gap-2">
+                      <div className="mt-4 flex flex-wrap gap-2 items-center">
+                        <span className="rounded-md border border-neon-300/30 bg-neon-300/6 px-3 py-1 font-mono text-[11px] font-semibold text-neon-300">
+                          AI Automation
+                        </span>
                         {['n8n', 'Zapier', 'Make', 'Airtable', 'Slack', 'Google Workspace'].map((tool) => (
                           <span
                             key={tool}
