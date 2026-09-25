@@ -57,10 +57,6 @@ export const metadata: Metadata = {
       "High-performance web, mobile and automation. React · Next.js · Laravel · Flutter · n8n.",
     type: "website",
   },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
 };
 
 export const viewport: Viewport = {
