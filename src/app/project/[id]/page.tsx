@@ -93,18 +93,20 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 
                 {details.demoUrl ? (
                   <div className="mt-6">
-                    <p className="inline-flex items-center gap-2 rounded border border-neon-400 bg-neon-400/10 px-4 py-2 text-sm font-semibold text-neon-300">
-                      Live demo:
-                      <a href={details.demoUrl} target="_blank" rel="noopener noreferrer" className="ml-2 underline">
-                        {details.demoUrl}
-                      </a>
-                    </p>
+                    <a
+                      href={details.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 hover:bg-white/[0.06] hover:border-neon-400 hover:text-neon-400 transition-colors duration-300"
+                    >
+                      Live demo
+                    </a>
                   </div>
                 ) : ((details.category ?? project.category ?? project.title).toLowerCase().includes("plugin") ? (
                   <div className="mt-6">
-                    <p className="rounded border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-semibold text-fog-500">
+                    <span className="inline-flex items-center justify-center rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 opacity-60 cursor-not-allowed">
                       Plugin — no live demo
-                    </p>
+                    </span>
                   </div>
                 ) : null)}
               </div>
