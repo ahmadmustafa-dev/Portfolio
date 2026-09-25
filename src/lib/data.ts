@@ -335,7 +335,7 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/Greenshift-Query-Enhancer/1.webp",
         "/images/Projects_Imgs/Greenshift-Query-Enhancer/2.webp",
       ],
-      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/8",
+      demoUrl: "https://ahmad-mustafa-portfolio.vercel.app/project/8",
     },
   },
   {
@@ -428,8 +428,6 @@ export const projects: Project[] = [
       ],
       screenshots: [
         "/images/Projects_Imgs/Garage-ERP-SaaS/1.webp",
-        "/images/Projects_Imgs/Garage-ERP-SaaS/2.webp",
-        "/images/Projects_Imgs/Garage-ERP-SaaS/3.webp",
       ],
       demoUrl: "https://car-garage-erp.vercel.app/",
     },
@@ -480,8 +478,6 @@ export const projects: Project[] = [
       ],
       screenshots: [
         "/images/Projects_Imgs/Ledgrz/1.webp",
-        "/images/Projects_Imgs/Ledgrz/2.webp",
-        "/images/Projects_Imgs/Ledgrz/3.webp",
       ],
     },
   },
