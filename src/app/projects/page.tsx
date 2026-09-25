@@ -178,22 +178,40 @@ export default function AllProjectsPage() {
                       {project.summary ?? project.description}
                     </p>
 
-                    {/* Case Study button */}
+                    {/* Case Study + Demo / Plugin CTA */}
                     <div className="mt-auto pt-6">
-                      {project.link ? (
-                        <a
-                          href={project.link}
-                          className="group/btn flex w-full sm:w-fit items-center justify-center rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 min-[480px]:px-6 min-[480px]:py-2.5 hover:bg-white/[0.06] hover:border-neon-400 hover:text-neon-400 transition-colors duration-300"
-                        >
-                          Case study
-                          <ArrowRight size={18} className="ml-2 transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:text-neon-400" />
-                        </a>
-                      ) : (
-                        <span className="flex w-full sm:w-fit items-center justify-center rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 min-[480px]:px-6 min-[480px]:py-2.5 cursor-not-allowed opacity-60">
-                          Case study soon
-                          <ArrowRight size={18} className="ml-2" />
-                        </span>
-                      )}
+                      <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+                        {project.link ? (
+                          <a
+                            href={project.link}
+                            className="group/btn flex w-full sm:w-fit items-center justify-center rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 min-[480px]:px-6 min-[480px]:py-2.5 hover:bg-white/[0.06] hover:border-neon-400 hover:text-neon-400 transition-colors duration-300"
+                          >
+                            Case study
+                            <ArrowRight size={18} className="ml-2 transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:text-neon-400" />
+                          </a>
+                        ) : (
+                          <span className="flex w-full sm:w-fit items-center justify-center rounded border border-white/10 bg-white/[0.03] px-5 py-2 text-sm font-semibold text-fog-600 min-[480px]:px-6 min-[480px]:py-2.5 cursor-not-allowed opacity-60">
+                            Case study soon
+                            <ArrowRight size={18} className="ml-2" />
+                          </span>
+                        )}
+
+                        {/* Live demo or plugin pill */}
+                        {project.details?.demoUrl ? (
+                          <a
+                            href={project.details.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex w-full sm:w-auto items-center justify-center rounded border border-neon-400 bg-neon-400/10 px-4 py-2 text-sm font-semibold text-neon-300 hover:bg-neon-300/10 transition-colors duration-200"
+                          >
+                            Live demo
+                          </a>
+                        ) : ((project.category ?? project.details?.category ?? project.title)?.toLowerCase().includes("plugin") ? (
+                          <span className="inline-flex w-full sm:w-auto items-center justify-center rounded border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-semibold text-fog-500 opacity-70 cursor-not-allowed">
+                            Plugin — no live demo
+                          </span>
+                        ) : null)}
+                      </div>
                     </div>
                   </div>
                 </article>

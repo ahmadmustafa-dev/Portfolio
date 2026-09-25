@@ -429,7 +429,7 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/Garage-ERP-SaaS/2.webp",
         "/images/Projects_Imgs/Garage-ERP-SaaS/3.webp",
       ],
-      demoUrl: "https://garageerp.com/",
+      demoUrl: "https://car-garage-erp.vercel.app/",
     },
   },
   {
@@ -481,7 +481,6 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/Ledgrz/2.webp",
         "/images/Projects_Imgs/Ledgrz/3.webp",
       ],
-      demoUrl: "https://ledgrz.com/",
     },
   },
   {
@@ -533,7 +532,7 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/TradePro/2.webp",
         "/images/Projects_Imgs/TradePro/3.webp",
       ],
-      demoUrl: "https://tradepro.com/",
+      demoUrl: "https://tradeprofunded.com/", 
     },
   },
   {
@@ -585,7 +584,6 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/Soccer-Stats-League-Manager/2.webp",
         "/images/Projects_Imgs/Soccer-Stats-League-Manager/3.webp",
       ],
-      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/6",
     },
   },
   {
@@ -637,7 +635,7 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/AI-Dental-Treatment-Planner/2.webp",
         "/images/Projects_Imgs/AI-Dental-Treatment-Planner/3.webp",
       ],
-      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/7",
+      demoUrl: "https://dentalsherpa.org/",
     },
   },
   {
@@ -689,7 +687,6 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/AI-socialReviews-Aggregator/2.webp",
         "/images/Projects_Imgs/AI-socialReviews-Aggregator/3.webp",
       ],
-      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/10",
     },
   },
   {
@@ -741,7 +738,7 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/DMT-Digital-Agency-Hub/2.webp",
         "/images/Projects_Imgs/DMT-Digital-Agency-Hub/3.webp",
       ],
-      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/11",
+      demoUrl: "https://www.digitalmarketingtechno.com/",
     },
   },
   {
@@ -793,7 +790,7 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/SKEK-GEAR/2.webp",
         "/images/Projects_Imgs/SKEK-GEAR/3.webp",
       ],
-      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/13",
+      demoUrl: "https://skekgear.com/", 
     },
   },
   {
@@ -845,7 +842,7 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/Via-Kashmir-Itinerary-CRM/2.webp",
         "/images/Projects_Imgs/Via-Kashmir-Itinerary-CRM/3.webp",
       ],
-      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/18",
+      demoUrl: "https://viakashmiritinerary.in/",
     },
   },
   {
@@ -897,7 +894,7 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/Qckserve/2.webp",
         "/images/Projects_Imgs/Qckserve/3.webp",
       ],
-      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/19",
+      demoUrl: "https://qckserve.in/",
     },
   },
   {
@@ -949,7 +946,7 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/Henna-by-Eishah/2.webp",
         "/images/Projects_Imgs/Henna-by-Eishah/3.webp",
       ],
-      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/22",
+      demoUrl: "https://wedding-mehndi.vercel.app/",
     },
   },
   {
@@ -1001,7 +998,6 @@ export const projects: Project[] = [
         "/images/Projects_Imgs/Invoice-CRM-Mobile-App/2.webp",
         "/images/Projects_Imgs/Invoice-CRM-Mobile-App/3.webp",
       ],
-      demoUrl: "https://hammad-mustafa-portfolio.vercel.app/project/23",
     },
   },
 ];
@@ -1047,6 +1043,14 @@ export type Role = {
 };
 
 export const experience: Role[] = [
+  {
+    period: "2026 — Present",
+    title: "AI Automations",
+    org: "Freelance — AI & Automation",
+    description:
+      "Designing and operating AI-powered automation pipelines and agents that connect LLMs to business systems. Deliverables include n8n and Zapier flows, Make integrations, Python agents, and vector-DB backed retrieval systems for reliable, production-ready automation.",
+    tech: ["n8n", "Zapier", "Make", "Python", "OpenAI", "Vector DBs"],
+  },
   {
     period: "2026 — Present",
     title: "Full-Stack Developer",
