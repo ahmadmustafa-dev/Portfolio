@@ -255,7 +255,7 @@ export const projects: Project[] = [
     image: "/images/Projects_Imgs/Project-Manager-Pro/1.webp",
     link: "/project/9",
     details: {
-      category: "Web Development",
+      category: "WordPress Plugin Development",
       overview: {
         problemSolved:
           "Provided a standardized method for agencies to document and display their project history with consistent metadata (Location, Client, Date) and rich media.",
@@ -310,7 +310,7 @@ export const projects: Project[] = [
     image: "/images/Projects_Imgs/Greenshift-Query-Enhancer/1.webp",
     link: "/project/8",
     details: {
-      category: "Web Development",
+          category: "WordPress Plugin Development",
       overview: {
         problemSolved:
           "Fixed the lack of manual reordering capabilities in standard query loop blocks, providing a visual way to manage content priority for marketing pages.",

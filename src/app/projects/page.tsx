@@ -63,7 +63,15 @@ export default function AllProjectsPage() {
     })
     .filter((project) => {
       const projectCategory = project.category ?? project.details?.category ?? "Web Development";
-      return activeCategory === "All" || projectCategory === activeCategory;
+      if (activeCategory === "All") return true;
+      if (projectCategory === activeCategory) return true;
+      // Include AI-powered WordPress plugins when filtering for general WordPress plugins
+      if (
+        activeCategory === "WordPress Plugin Development" &&
+        projectCategory === "AI-Powered WordPress Plugin Development"
+      )
+        return true;
+      return false;
     });
 
   return (
