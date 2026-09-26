@@ -22,9 +22,9 @@ export const profile = {
 };
 
 export const stats = [
-  { value: 4, suffix: "+", label: "Years building" },
-  { value: 30, suffix: "+", label: "Projects shipped" },
-  { value: 40, suffix: "+", label: "n8n workflows" },
+  { value: 3, suffix: "+", label: "Years building" },
+  { value: 20, suffix: "+", label: "Projects shipped" },
+  { value: 5, suffix: "+", label: "n8n workflows" },
   { value: 10, suffix: "+", label: "Tech stacks" },
 ];
 

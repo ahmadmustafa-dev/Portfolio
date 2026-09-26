@@ -214,7 +214,7 @@ export default function Hero() {
                   <div className="flex items-center justify-between border-t border-white/8 px-4 py-2 font-mono text-[10px] text-fog-700">
                     <span className="flex items-center gap-2 text-fog-500">
                       <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-neon-400" aria-hidden="true" />
-                      online — 3 services
+                      online — 4 services
                     </span>
                     <span>ahmad@dev · v3.0</span>
                   </div>
